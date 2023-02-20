@@ -1,0 +1,145 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.summary {
+  line-height: 1.15em;
+}
+
+:root {
+  background-color: #EFEFEF;
+  font-family: 'Arial';
+  font-weight: 400; }
+  :root #document {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: white;
+    width: 8.5in;
+    /* height: 27.15in; */
+    height: 13.25in;
+    padding: 0.3in 0.5in;
+    margin: 5vh auto; }
+  :root .about-me {
+    text-align: center; }
+    :root .about-me .about-me__name {
+      font-weight: 100;
+      font-size: 2.75em;
+      color: #002060;}
+      :root .about-me .about-me__name .about-me__last-name {
+        font-weight: 700;
+        color: #002060;}
+    :root .about-me h6 {
+      font-size: 0.8em;
+      line-height: 1.5em; }
+    :root .about-me .about-me__position {
+      color: #DD3D2A;
+      font-size: 0.9333rem; }
+    :root .about-me .about-me__address {
+      font-weight: 500;
+      line-height: 2em;}
+    :root .about-me .about-me__social > h6 {
+      display: inline; }
+      :root .about-me .about-me__social > h6 a {
+        text-decoration: none;
+        color: black; }
+        :root .about-me .about-me__social > h6 a i.fa {
+          margin-right: 0.4em; }
+      :root .about-me .about-me__social > h6::after {
+        margin-left: 0.75em;
+        margin-right: 0.5em; }
+  :root section {
+    width: 100%;
+    margin-top: 0.5rem; }
+    :root section .section__heading {
+      color: #002060;
+      font-weight: 700;
+      font-size: 1.4em;
+      margin-bottom: 0.15em;
+      display: flex;
+      flex-direction: row;
+      }
+      :root section .section__heading .section__heading-underline {
+        flex-grow: 1;
+        border-bottom: 2px solid #838383;
+        margin-bottom: 5px; }
+    :root section .section__item {
+      margin-bottom: 0.5rem; }
+      :root section .section__item > div {
+        width: 100%; }
+        :root section .section__item > div:not(:first-child) {
+          margin-top: 0.3em; }
+        :root section .section__item > div > * {
+          display: inline; }
+        :root section .section__item > div > *:last-child {
+          float: right; }
+        :root section .section__item > div .section__subheading {
+          font-weight: 600;}
+        :root section .section__item > div .section__location {
+          color: #DD3D2A;
+          font-size: 0.9em; }
+        :root section .section__item > div .section__subsubheading {
+          font-weight: 500; }
+        :root section .section__item > div .section__date-range {
+          font-weight: 500; }
+    :root section ul {
+      margin-left: 1.1em;
+      margin-top: 0.4em;
+      font-size: 1rem;
+      line-height: 1.15em; }
+      :root section ul li:not(:last-child) {
+        margin-bottom: 0.2rem; }
+    :root section ul, :root section table {
+      font-size: 1rem; }
+  :root .skills table tr td:first-child {
+    text-align: right;
+    font-weight: bold;
+    font-size: 1rem;
+    padding-right: 0.8em; }
+  :root .skills .skills__list span:not(:last-child)::after {
+    content: ', '; }
+  :root footer {
+    align-self: flex-end;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    font-size: 0.75em;
+    margin-top: auto; }
+    :root footer table {
+      width: 100%;
+      color: #999999; }
+      :root footer table td {
+        flex-grow: 1; }
+
+@media print {
+  :root #document {
+    top: initial;
+    bottom: initial;
+    transform: none;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0; } }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,956 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+<div class="row" justify-content-center"> <!-- This allows split screen into leftside & rightside -->
+
+<div class="col-xl-4">
+  <div class="leftside">
+    <div class="row m-6">
+      <div class="col-xl-12">
+        <form method="POST">
+          {% csrf_token %}
+          <h1>CV Generator<br><span style="color: grey; font-size: 30px;">2. Construction</span></h1>
+          <hr>
+          <!--PERSONAL PROFILE--------------------------------------------------->
+          <h4>Personal Profile</h4>
+          <div class="form-row">
+            <div class="form-group col-xl-12">
+              <label for="">What best describes your work ethic?</label>
+              <select type="text" class="form-control" name="sum_1" id="sum_1">
+                <option>Click to select</option>
+                <option>Enthusiastic</option>
+                <option>Driven</option>
+                <option>Dedicated</option>
+                <option>Motivated</option>
+                <option>Creative</option>
+                <option>Hardworking</option>
+                <option>Eager</option>
+                <option>Disciplined</option>
+                <option>Detail-oriented</option>
+                <option>Proactive</option>
+              </select>
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Do you have experience as a tradesman?</label>
+              <select type="text" class="form-control" name="construction_sum_1" id="construction_sum_1">
+                <option>Click to select</option>
+                <option>Yes, I'm an experienced tradesman</option>
+                <option>No, I'm not an experienced tradesman yet</option>
+              </select>
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Select a skill you have:</label>
+              <select type="text" class="form-control" name="construction_sum_2" id="construction_sum_2">
+                <option>Click to select</option>
+                <option>developing interpersonal relationships</option>
+                <option>client communication</option>
+                <option>stakeholder management</option>
+                <option>teamworking</option>
+                <option>problem solving</option>
+                <option>logical thinking</option>
+                <option>manual labour</option>
+                <option>plumbing</option>
+                <option>demolition</option>
+                <option>carpentry</option>
+                <option>construction machinery operation</option>
+                <option>drywalling</option>
+                <option>utilising HVAC equipment and ductwork</option>
+                <option>appliance installations</option>
+              </select>
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Select a second skill you have:</label>
+              <select type="text" class="form-control" name="construction_sum_3" id="construction_sum_3">
+                <option>Click to select</option>
+                <option>developing interpersonal relationships</option>
+                <option>client communication</option>
+                <option>stakeholder management</option>
+                <option>teamworking</option>
+                <option>problem solving</option>
+                <option>logical thinking</option>
+                <option>manual labour</option>
+                <option>plumbing</option>
+                <option>demolition</option>
+                <option>carpentry</option>
+                <option>construction machinery operation</option>
+                <option>drywalling</option>
+                <option>utilising HVAC equipment and ductwork</option>
+                <option>appliance installations</option>
+              </select>
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Select a third skill you have:</label>
+              <select type="text" class="form-control" name="construction_sum_4" id="construction_sum_4">
+                <option>Click to select</option>
+                <option>developing interpersonal relationships</option>
+                <option>client communication</option>
+                <option>stakeholder management</option>
+                <option>teamworking</option>
+                <option>problem solving</option>
+                <option>logical thinking</option>
+                <option>manual labour</option>
+                <option>plumbing</option>
+                <option>demolition</option>
+                <option>carpentry</option>
+                <option>construction machinery operation</option>
+                <option>drywalling</option>
+                <option>utilising HVAC equipment and ductwork</option>
+                <option>appliance installations</option>
+              </select>
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Do you have a UK driving licence?</label>
+              <select type="text" class="form-control" name="construction_sum_5" id="construction_sum_5">
+                <option>Click to select (default: No)</option>
+                <option>Yes (can drive in United Kingdom)</option>
+              </select>
+            </div>
+          </div><hr>
+          <!--WORK EXPERIENCE 1-------------------------------------------------->
+          <h4>Work Experience 1</h4>
+          <div class="form-row">
+            <div class="form-group col-xl-12">
+              <label for="">Institution Name 1</label>
+              <input type="text" class="form-control" name="company_1" id="company_1" placeholder="E.g. Acorn Recruitment Ltd">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Job Title 1</label>
+              <input type="text" class="form-control" name="job_1" id="job_1" placeholder="E.g. Labourer">
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">Start Date 1</label>
+              <input type="text" class="form-control" name="work_start_1" id="work_start_1" placeholder="E.g. April 2020">
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">End Date 1</label>
+              <input type="text" class="form-control" name="work_end_1" id="work_end_1" placeholder="E.g. October 2020">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Select a skill that you developed:</label>
+              <select type="text" class="form-control" name="work_1a" id="work_1a">
+                <option>Click to select</option>
+                <option>Plumbing (Commercial)</option>
+                <option>Plumbing (Domestic)</option>
+                <option>Plumbing (Domestic and Commercial)</option>
+                <option>Demolition</option>
+                <option>Carpentry Expertise</option>
+                <option>Construction Machinery Operation</option>
+                <option>Drywalling</option>
+                <option>HVAC Equipment and Ductwork</option>
+                <option>Appliance Installations</option>
+                <option>Driver</option>
+                <option>Problem solving</option>
+                <option>Interpersonal skills</option>
+                <option>Enthusiastic</option>
+                <option>Customer Service</option>
+                <option>Works well under pressure</option>
+                <option>Teamwork</option>
+                <option>Motivational</option>
+                <option>Independent</option>
+                <option>Disciplined (organisation/time management)</option>
+                <option>Disciplined (following instructions/rules)</option>
+                <option>Organisation</option>
+                <option>Flexible in work</option>
+                <option>Trustworthy</option>
+                <option>Attention to detail</option>
+              </select>
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Select a second skill that you developed:</label>
+              <select type="text" class="form-control" name="work_1c" id="work_1c">
+                <option>Click to select</option>
+                <option>Plumbing (Commercial)</option>
+                <option>Plumbing (Domestic)</option>
+                <option>Plumbing (Domestic and Commercial)</option>
+                <option>Demolition</option>
+                <option>Carpentry Expertise</option>
+                <option>Construction Machinery Operation</option>
+                <option>Drywalling</option>
+                <option>HVAC Equipment and Ductwork</option>
+                <option>Appliance Installations</option>
+                <option>Driver</option>
+                <option>Problem solving</option>
+                <option>Interpersonal skills</option>
+                <option>Enthusiastic</option>
+                <option>Customer Service</option>
+                <option>Works well under pressure</option>
+                <option>Teamwork</option>
+                <option>Motivational</option>
+                <option>Independent</option>
+                <option>Disciplined (organisation/time management)</option>
+                <option>Disciplined (following instructions/rules)</option>
+                <option>Organisation</option>
+                <option>Flexible in work</option>
+                <option>Trustworthy</option>
+                <option>Attention to detail</option>
+              </select>
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Select a third skill that you developed:</label>
+              <select type="text" class="form-control" name="work_1e" id="work_1e">
+                <option>Click to select</option>
+                <option>Plumbing (Commercial)</option>
+                <option>Plumbing (Domestic)</option>
+                <option>Plumbing (Domestic and Commercial)</option>
+                <option>Demolition</option>
+                <option>Carpentry Expertise</option>
+                <option>Construction Machinery Operation</option>
+                <option>Drywalling</option>
+                <option>HVAC Equipment and Ductwork</option>
+                <option>Appliance Installations</option>
+                <option>Driver</option>
+                <option>Problem solving</option>
+                <option>Interpersonal skills</option>
+                <option>Enthusiastic</option>
+                <option>Customer Service</option>
+                <option>Works well under pressure</option>
+                <option>Teamwork</option>
+                <option>Motivational</option>
+                <option>Independent</option>
+                <option>Disciplined (organisation/time management)</option>
+                <option>Disciplined (following instructions/rules)</option>
+                <option>Organisation</option>
+                <option>Flexible in work</option>
+                <option>Trustworthy</option>
+                <option>Attention to detail</option>
+              </select>
+            </div>
+          </div><hr>
+          <!--WORK EXPERIENCE 2-------------------------------------------------->
+          <h4>Work Experience 2</h4>
+          <div class="form-row">
+            <div class="form-group col-xl-12">
+              <label for="">Institution Name 2</label>
+              <input type="text" class="form-control" name="company_2" id="company_2" placeholder="E.g. Checkatrade">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Job Title 2</label>
+              <input type="text" class="form-control" name="job_2" id="job_2" placeholder="E.g. Carpenter">
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">Start Date 2</label>
+              <input type="text" class="form-control" name="work_start_2" id="work_start_2" placeholder="E.g. April 2020">
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">End Date 2</label>
+              <input type="text" class="form-control" name="work_end_2" id="work_end_2" placeholder="E.g. October 2020">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Select a skill that you developed:</label>
+              <select type="text" class="form-control" name="work_2a" id="work_2a">
+                <option>Click to select</option>
+                <option>Plumbing (Commercial)</option>
+                <option>Plumbing (Domestic)</option>
+                <option>Plumbing (Domestic and Commercial)</option>
+                <option>Demolition</option>
+                <option>Carpentry Expertise</option>
+                <option>Construction Machinery Operation</option>
+                <option>Drywalling</option>
+                <option>HVAC Equipment and Ductwork</option>
+                <option>Appliance Installations</option>
+                <option>Driver</option>
+                <option>Problem solving</option>
+                <option>Interpersonal skills</option>
+                <option>Enthusiastic</option>
+                <option>Customer Service</option>
+                <option>Works well under pressure</option>
+                <option>Teamwork</option>
+                <option>Motivational</option>
+                <option>Independent</option>
+                <option>Disciplined (organisation/time management)</option>
+                <option>Disciplined (following instructions/rules)</option>
+                <option>Organisation</option>
+                <option>Flexible in work</option>
+                <option>Trustworthy</option>
+                <option>Attention to detail</option>
+              </select>
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Select a second skill that you developed:</label>
+              <select type="text" class="form-control" name="work_2c" id="work_2c">
+                <option>Click to select</option>
+                <option>Plumbing (Commercial)</option>
+                <option>Plumbing (Domestic)</option>
+                <option>Plumbing (Domestic and Commercial)</option>
+                <option>Demolition</option>
+                <option>Carpentry Expertise</option>
+                <option>Construction Machinery Operation</option>
+                <option>Drywalling</option>
+                <option>HVAC Equipment and Ductwork</option>
+                <option>Appliance Installations</option>
+                <option>Driver</option>
+                <option>Problem solving</option>
+                <option>Interpersonal skills</option>
+                <option>Enthusiastic</option>
+                <option>Customer Service</option>
+                <option>Works well under pressure</option>
+                <option>Teamwork</option>
+                <option>Motivational</option>
+                <option>Independent</option>
+                <option>Disciplined (organisation/time management)</option>
+                <option>Disciplined (following instructions/rules)</option>
+                <option>Organisation</option>
+                <option>Flexible in work</option>
+                <option>Trustworthy</option>
+                <option>Attention to detail</option>
+              </select>
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Select a third skill that you developed:</label>
+              <select type="text" class="form-control" name="work_2e" id="work_2e">
+                <option>Click to select</option>
+                <option>Plumbing (Commercial)</option>
+                <option>Plumbing (Domestic)</option>
+                <option>Plumbing (Domestic and Commercial)</option>
+                <option>Demolition</option>
+                <option>Carpentry Expertise</option>
+                <option>Construction Machinery Operation</option>
+                <option>Drywalling</option>
+                <option>HVAC Equipment and Ductwork</option>
+                <option>Appliance Installations</option>
+                <option>Driver</option>
+                <option>Problem solving</option>
+                <option>Interpersonal skills</option>
+                <option>Enthusiastic</option>
+                <option>Customer Service</option>
+                <option>Works well under pressure</option>
+                <option>Teamwork</option>
+                <option>Motivational</option>
+                <option>Independent</option>
+                <option>Disciplined (organisation/time management)</option>
+                <option>Disciplined (following instructions/rules)</option>
+                <option>Organisation</option>
+                <option>Flexible in work</option>
+                <option>Trustworthy</option>
+                <option>Attention to detail</option>
+              </select>
+            </div>
+          </div><hr>
+          <!--WORK EXPERIENCE 3-------------------------------------------------->
+          <h4>Work Experience 3</h4>
+          <div class="form-row">
+            <div class="form-group col-xl-12">
+              <label for="">Institution Name 3</label>
+              <input type="text" class="form-control" name="company_3" id="company_3" placeholder="E.g. Construct Recruitment">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Job Title 3</label>
+              <input type="text" class="form-control" name="job_3" id="job_3" placeholder="E.g. Trainee Construction Operative">
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">Start Date 3</label>
+              <input type="text" class="form-control" name="work_start_3" id="work_start_3" placeholder="E.g. April 2020">
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">End Date 3</label>
+              <input type="text" class="form-control" name="work_end_3" id="work_end_3" placeholder="E.g. October 2020">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Select a skill that you developed:</label>
+              <select type="text" class="form-control" name="work_3a" id="work_3a">
+                <option>Click to select</option>
+                <option>Plumbing (Commercial)</option>
+                <option>Plumbing (Domestic)</option>
+                <option>Plumbing (Domestic and Commercial)</option>
+                <option>Demolition</option>
+                <option>Carpentry Expertise</option>
+                <option>Construction Machinery Operation</option>
+                <option>Drywalling</option>
+                <option>HVAC Equipment and Ductwork</option>
+                <option>Appliance Installations</option>
+                <option>Driver</option>
+                <option>Problem solving</option>
+                <option>Interpersonal skills</option>
+                <option>Enthusiastic</option>
+                <option>Customer Service</option>
+                <option>Works well under pressure</option>
+                <option>Teamwork</option>
+                <option>Motivational</option>
+                <option>Independent</option>
+                <option>Disciplined (organisation/time management)</option>
+                <option>Disciplined (following instructions/rules)</option>
+                <option>Organisation</option>
+                <option>Flexible in work</option>
+                <option>Trustworthy</option>
+                <option>Attention to detail</option>
+              </select>
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Select a second skill that you developed:</label>
+              <select type="text" class="form-control" name="work_3c" id="work_3c">
+                <option>Click to select</option>
+                <option>Plumbing (Commercial)</option>
+                <option>Plumbing (Domestic)</option>
+                <option>Plumbing (Domestic and Commercial)</option>
+                <option>Demolition</option>
+                <option>Carpentry Expertise</option>
+                <option>Construction Machinery Operation</option>
+                <option>Drywalling</option>
+                <option>HVAC Equipment and Ductwork</option>
+                <option>Appliance Installations</option>
+                <option>Driver</option>
+                <option>Problem solving</option>
+                <option>Interpersonal skills</option>
+                <option>Enthusiastic</option>
+                <option>Customer Service</option>
+                <option>Works well under pressure</option>
+                <option>Teamwork</option>
+                <option>Motivational</option>
+                <option>Independent</option>
+                <option>Disciplined (organisation/time management)</option>
+                <option>Disciplined (following instructions/rules)</option>
+                <option>Organisation</option>
+                <option>Flexible in work</option>
+                <option>Trustworthy</option>
+                <option>Attention to detail</option>
+              </select>
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Select a third skill that you developed:</label>
+              <select type="text" class="form-control" name="work_3e" id="work_3e">
+                <option>Click to select</option>
+                <option>Plumbing (Commercial)</option>
+                <option>Plumbing (Domestic)</option>
+                <option>Plumbing (Domestic and Commercial)</option>
+                <option>Demolition</option>
+                <option>Carpentry Expertise</option>
+                <option>Construction Machinery Operation</option>
+                <option>Drywalling</option>
+                <option>HVAC Equipment and Ductwork</option>
+                <option>Appliance Installations</option>
+                <option>Driver</option>
+                <option>Problem solving</option>
+                <option>Interpersonal skills</option>
+                <option>Enthusiastic</option>
+                <option>Customer Service</option>
+                <option>Works well under pressure</option>
+                <option>Teamwork</option>
+                <option>Motivational</option>
+                <option>Independent</option>
+                <option>Disciplined (organisation/time management)</option>
+                <option>Disciplined (following instructions/rules)</option>
+                <option>Organisation</option>
+                <option>Flexible in work</option>
+                <option>Trustworthy</option>
+                <option>Attention to detail</option>
+              </select>
+            </div>
+          </div><hr>
+          <!--WORK EXPERIENCE 4-------------------------------------------------->
+          <h4>Work Experience 4</h4>
+          <div class="form-row">
+            <div class="form-group col-xl-12">
+              <label for="">Institution Name 4</label>
+              <input type="text" class="form-control" name="company_4" id="company_4" placeholder="E.g. EPS Construction Lts">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Job Title 4</label>
+              <input type="text" class="form-control" name="job_4" id="job_4" placeholder="E.g. Electrician">
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">Start Date 4</label>
+              <input type="text" class="form-control" name="work_start_4" id="work_start_4" placeholder="E.g. April 2020">
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">End Date 4</label>
+              <input type="text" class="form-control" name="work_end_4" id="work_end_4" placeholder="E.g. October 2020">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Select a skill that you developed:</label>
+              <select type="text" class="form-control" name="work_4a" id="work_4a">
+                <option>Click to select</option>
+                <option>Plumbing (Commercial)</option>
+                <option>Plumbing (Domestic)</option>
+                <option>Plumbing (Domestic and Commercial)</option>
+                <option>Demolition</option>
+                <option>Carpentry Expertise</option>
+                <option>Construction Machinery Operation</option>
+                <option>Drywalling</option>
+                <option>HVAC Equipment and Ductwork</option>
+                <option>Appliance Installations</option>
+                <option>Driver</option>
+                <option>Problem solving</option>
+                <option>Interpersonal skills</option>
+                <option>Enthusiastic</option>
+                <option>Customer Service</option>
+                <option>Works well under pressure</option>
+                <option>Teamwork</option>
+                <option>Motivational</option>
+                <option>Independent</option>
+                <option>Disciplined (organisation/time management)</option>
+                <option>Disciplined (following instructions/rules)</option>
+                <option>Organisation</option>
+                <option>Flexible in work</option>
+                <option>Trustworthy</option>
+                <option>Attention to detail</option>
+              </select>
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Select a second skill that you developed:</label>
+              <select type="text" class="form-control" name="work_4c" id="work_4c">
+                <option>Click to select</option>
+                <option>Plumbing (Commercial)</option>
+                <option>Plumbing (Domestic)</option>
+                <option>Plumbing (Domestic and Commercial)</option>
+                <option>Demolition</option>
+                <option>Carpentry Expertise</option>
+                <option>Construction Machinery Operation</option>
+                <option>Drywalling</option>
+                <option>HVAC Equipment and Ductwork</option>
+                <option>Appliance Installations</option>
+                <option>Driver</option>
+                <option>Problem solving</option>
+                <option>Interpersonal skills</option>
+                <option>Enthusiastic</option>
+                <option>Customer Service</option>
+                <option>Works well under pressure</option>
+                <option>Teamwork</option>
+                <option>Motivational</option>
+                <option>Independent</option>
+                <option>Disciplined (organisation/time management)</option>
+                <option>Disciplined (following instructions/rules)</option>
+                <option>Organisation</option>
+                <option>Flexible in work</option>
+                <option>Trustworthy</option>
+                <option>Attention to detail</option>
+              </select>
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Select a third skill that you developed:</label>
+              <select type="text" class="form-control" name="work_4e" id="work_4e">
+                <option>Click to select</option>
+                <option>Plumbing (Commercial)</option>
+                <option>Plumbing (Domestic)</option>
+                <option>Plumbing (Domestic and Commercial)</option>
+                <option>Demolition</option>
+                <option>Carpentry Expertise</option>
+                <option>Construction Machinery Operation</option>
+                <option>Drywalling</option>
+                <option>HVAC Equipment and Ductwork</option>
+                <option>Appliance Installations</option>
+                <option>Driver</option>
+                <option>Problem solving</option>
+                <option>Interpersonal skills</option>
+                <option>Enthusiastic</option>
+                <option>Customer Service</option>
+                <option>Works well under pressure</option>
+                <option>Teamwork</option>
+                <option>Motivational</option>
+                <option>Independent</option>
+                <option>Disciplined (organisation/time management)</option>
+                <option>Disciplined (following instructions/rules)</option>
+                <option>Organisation</option>
+                <option>Flexible in work</option>
+                <option>Trustworthy</option>
+                <option>Attention to detail</option>
+              </select>
+            </div>
+          </div><hr>
+          <!--EDUCATION (COLLEGE)------------------------------------------------>
+          <h4>Higher Education (E.g. University Degree)</h4>
+          <div class="form-row">
+            <div class="form-group col-xl-12">
+              <label for="">Institution/University Name</label>
+              <input type="text" class="form-control" name="college_name" id="college_name" placeholder="E.g. University of London">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Degree/Course Type</label>
+              <input type="text" class="form-control" name="college_course_type" id="college_course_type" placeholder="E.g. MPhil, BSc, BA, DipHE, CertHE">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Name/Title of Course Studied</label>
+              <input type="text" class="form-control" name="college_course_name" id="college_course_name" placeholder="E.g. Adult Nursing, Applied Mathematics">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Overall Result/Grade</label>
+              <input type="text" class="form-control" name="college_grade" id="college_grade" placeholder="E.g. Merit, 2:1, Upper Second-Class Honours">
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">Start Date</label>
+              <input type="text" class="form-control" name="college_start" id="college_start" placeholder="E.g. September 2012">
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">End Date</label>
+              <input type="text" class="form-control" name="college_end" id="college_end" placeholder="E.g. June 2015">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">You may want to list any relevant modules/subjects you studied (use commas to separate):</label>
+              <input type="text" class="form-control" name="college_modules" id="college_modules" placeholder="E.g. Introduction to Nursing and Health Care">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Any Notable Positions or Achievements? (use commas to separate):</label>
+              <input type="text" class="form-control" name="college_notable" id="college_notable" placeholder="E.g. Student Representative">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Were you part of any societies or clubs? (use commas to separate):</label>
+              <input type="text" class="form-control" name="college_societies" id="college_societies" placeholder="E.g. Football, Chess, Bioscience, Sailing">
+            </div>
+          </div><hr>
+          <!--EDUCATION (A Levels)----------------------------------------------->
+          <h4>Sixth Form / College Education (E.g. A Level, AS Level, BTEC/NVQ Level 3)</h4>
+          <div class="form-row">
+            <div class="form-group col-xl-12">
+              <label for="">School/College Name</label>
+              <input type="text" class="form-control" name="upper_school_name" id="upper_school_name" placeholder="E.g. Newham Sixth Form College">
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">Start Date</label>
+              <input type="text" class="form-control" name="upper_school_start" id="upper_school_start" placeholder="E.g. July 2010">
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">End date</label>
+              <input type="text" class="form-control" name="upper_school_end" id="upper_school_end" placeholder="E.g. July 2012">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Qualification Type 1</label>
+              <input type="text" class="form-control" name="upper_school_subject_type_1" id="upper_school_subject_type_1" placeholder="E.g. A Level, AS Level, BTEC/NVQ Level 3">
+            </div>
+            <div class="form-group col-xl-7">
+              <label for="">Subject 1 Name</label>
+              <input type="text" class="form-control" name="upper_school_subject_name_1" id="upper_school_subject_name_1" placeholder="E.g. Biology">
+            </div>
+            <div class="form-group col-xl-5">
+              <label for="">Subject 1 Grade</label>
+              <input type="text" class="form-control" name="upper_school_subject_grade_1" id="upper_school_subject_grade_1" placeholder="E.g. A*, C, Merit">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Qualification Type 2</label>
+              <input type="text" class="form-control" name="upper_school_subject_type_2" id="upper_school_subject_type_2" placeholder="E.g. A Level, AS Level, BTEC/NVQ Level 3">
+            </div>
+            <div class="form-group col-xl-7">
+              <label for="">Subject 2 Name</label>
+              <input type="text" class="form-control" name="upper_school_subject_name_2" id="upper_school_subject_name_2" placeholder="E.g. French">
+            </div>
+            <div class="form-group col-xl-5">
+              <label for="">Subject 2 Grade</label>
+              <input type="text" class="form-control" name="upper_school_subject_grade_2" id="upper_school_subject_grade_2" placeholder="E.g. A*, C, Merit">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Qualification Type 3</label>
+              <input type="text" class="form-control" name="upper_school_subject_type_3" id="upper_school_subject_type_3" placeholder="E.g. A Level, AS Level, BTEC/NVQ Level 3">
+            </div>
+            <div class="form-group col-xl-7">
+              <label for="">Subject 3 Name</label>
+              <input type="text" class="form-control" name="upper_school_subject_name_3" id="upper_school_subject_name_3" placeholder="E.g. Childcare">
+            </div>
+            <div class="form-group col-xl-5">
+              <label for="">Subject 3 Grade</label>
+              <input type="text" class="form-control" name="upper_school_subject_grade_3" id="upper_school_subject_grade_3" placeholder="E.g. A*, C, Merit">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Qualification Type 4</label>
+              <input type="text" class="form-control" name="upper_school_subject_type_4" id="upper_school_subject_type_4" placeholder="E.g. A Level, AS Level, BTEC/NVQ Level 3">
+            </div>
+            <div class="form-group col-xl-7">
+              <label for="">Subject 4 Name</label>
+              <input type="text" class="form-control" name="upper_school_subject_name_4" id="upper_school_subject_name_4" placeholder="E.g. History">
+            </div>
+            <div class="form-group col-xl-5">
+              <label for="">Subject 4 Grade</label>
+              <input type="text" class="form-control" name="upper_school_subject_grade_4" id="upper_school_subject_grade_4" placeholder="E.g. A*, C, Merit">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Qualification Type 5</label>
+              <input type="text" class="form-control" name="upper_school_subject_type_5" id="upper_school_subject_type_5" placeholder="E.g. A Level, AS Level, BTEC/NVQ Level 3">
+            </div>
+            <div class="form-group col-xl-7">
+              <label for="">Subject 5 Name</label>
+              <input type="text" class="form-control" name="upper_school_subject_name_5" id="upper_school_subject_name_5" placeholder="E.g. Travel and Tourism">
+            </div>
+            <div class="form-group col-xl-5">
+              <label for="">Subject 5 Grade</label>
+              <input type="text" class="form-control" name="upper_school_subject_grade_5" id="upper_school_subject_grade_5" placeholder="E.g. A*, C, Merit">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Were you part of any clubs? (use commas to separate):</label>
+              <input type="text" class="form-control" name="upper_school_clubs" id="upper_school_clubs" placeholder="E.g. Football, Chess, Rugby, Swimming">
+            </div>
+          </div><hr>
+          <!--EDUCATION (GCSE's)------------------------------------------------->
+          <h4>Secondary School Education (E.g. GCSE, O Level, BTEC/NVQ Level 2)</h4>
+          <div class="form-row">
+            <div class="form-group col-xl-12">
+              <label for="">School Name</label>
+              <input type="text" class="form-control" name="lower_school_name" id="lower_school_name" placeholder="E.g. Lister Community School">
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">Start Date</label>
+              <input type="text" class="form-control" name="lower_school_start" id="lower_school_start" placeholder="E.g. July 2008">
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">End Date</label>
+              <input type="text" class="form-control" name="lower_school_end" id="lower_school_end" placeholder="E.g. July 2010">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Qualification Type 1</label>
+              <input type="text" class="form-control" name="lower_school_subject_type_1" id="lower_school_subject_type_1" placeholder="E.g. GCSE, O Level, BTEC/NVQ Level 2">
+            </div>
+            <div class="form-group col-xl-7">
+              <label for="">Subject 1 Name</label>
+              <input type="text" class="form-control" name="lower_school_subject_name_1" id="lower_school_subject_name_1" placeholder="E.g. English Literature">
+            </div>
+            <div class="form-group col-xl-5">
+              <label for="">Subject 1 Grade</label>
+              <input type="text" class="form-control" name="lower_school_subject_grade_1" id="lower_school_subject_grade_1" placeholder="E.g. A*, C, Merit">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Qualification Type 2</label>
+              <input type="text" class="form-control" name="lower_school_subject_type_2" id="lower_school_subject_type_2" placeholder="E.g. GCSE, O Level, BTEC/NVQ Level 2">
+            </div>
+            <div class="form-group col-xl-7">
+              <label for="">Subject 2 Name</label>
+              <input type="text" class="form-control" name="lower_school_subject_name_2" id="lower_school_subject_name_2" placeholder="E.g. English Language">
+            </div>
+            <div class="form-group col-xl-5">
+              <label for="">Subject 2 Grade</label>
+              <input type="text" class="form-control" name="lower_school_subject_grade_2" id="lower_school_subject_grade_2" placeholder="E.g. A*, C, Merit">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Qualification Type 3</label>
+              <input type="text" class="form-control" name="lower_school_subject_type_3" id="lower_school_subject_type_3" placeholder="E.g. GCSE, O Level, BTEC/NVQ Level 2">
+            </div>
+            <div class="form-group col-xl-7">
+              <label for="">Subject 3 Name</label>
+              <input type="text" class="form-control" name="lower_school_subject_name_3" id="lower_school_subject_name_3" placeholder="E.g. Mathematics">
+            </div>
+            <div class="form-group col-xl-5">
+              <label for="">Subject 3 Grade</label>
+              <input type="text" class="form-control" name="lower_school_subject_grade_3" id="lower_school_subject_grade_3" placeholder="E.g. A*, C, Merit">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Qualification Type 4</label>
+              <input type="text" class="form-control" name="lower_school_subject_type_4" id="lower_school_subject_type_4" placeholder="E.g. GCSE, O Level, BTEC/NVQ Level 2">
+            </div>
+            <div class="form-group col-xl-7">
+              <label for="">Subject 4 Name</label>
+              <input type="text" class="form-control" name="lower_school_subject_name_4" id="lower_school_subject_name_4" placeholder="E.g. Geography">
+            </div>
+            <div class="form-group col-xl-5">
+              <label for="">Subject 4 Grade</label>
+              <input type="text" class="form-control" name="lower_school_subject_grade_4" id="lower_school_subject_grade_4" placeholder="E.g. A*, C, Merit">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Qualification Type 5</label>
+              <input type="text" class="form-control" name="lower_school_subject_type_5" id="lower_school_subject_type_5" placeholder="E.g. GCSE, O Level, BTEC/NVQ Level 2">
+            </div>
+            <div class="form-group col-xl-7">
+              <label for="">Subject 5 Name</label>
+              <input type="text" class="form-control" name="lower_school_subject_name_5" id="lower_school_subject_name_5" placeholder="E.g. Physical Education">
+            </div>
+            <div class="form-group col-xl-5">
+              <label for="">Subject 5 Grade</label>
+              <input type="text" class="form-control" name="lower_school_subject_grade_5" id="lower_school_subject_grade_5" placeholder="E.g. A*, C, Merit">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Qualification Type 6</label>
+              <input type="text" class="form-control" name="lower_school_subject_type_6" id="lower_school_subject_type_6" placeholder="E.g. GCSE, O Level, BTEC/NVQ Level 2">
+            </div>
+            <div class="form-group col-xl-7">
+              <label for="">Subject 6 Name</label>
+              <input type="text" class="form-control" name="lower_school_subject_name_6" id="lower_school_subject_name_6" placeholder="E.g. French">
+            </div>
+            <div class="form-group col-xl-5">
+              <label for="">Subject 6 Grade</label>
+              <input type="text" class="form-control" name="lower_school_subject_grade_6" id="lower_school_subject_grade_6" placeholder="E.g. A*, C, Merit">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Qualification Type 7</label>
+              <input type="text" class="form-control" name="lower_school_subject_type_7" id="lower_school_subject_type_7" placeholder="E.g. GCSE, O Level, BTEC/NVQ Level 2">
+            </div>
+            <div class="form-group col-xl-7">
+              <label for="">Subject 7 Name</label>
+              <input type="text" class="form-control" name="lower_school_subject_name_7" id="lower_school_subject_name_7" placeholder="E.g. Music">
+            </div>
+            <div class="form-group col-xl-5">
+              <label for="">Subject 7 Grade</label>
+              <input type="text" class="form-control" name="lower_school_subject_grade_7" id="lower_school_subject_grade_7" placeholder="E.g. A*, C, Merit">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Qualification Type 8</label>
+              <input type="text" class="form-control" name="lower_school_subject_type_8" id="lower_school_subject_type_8" placeholder="E.g. GCSE, O Level, BTEC/NVQ Level 2">
+            </div>
+            <div class="form-group col-xl-7">
+              <label for="">Subject 8 Name</label>
+              <input type="text" class="form-control" name="lower_school_subject_name_8" id="lower_school_subject_name_8" placeholder="E.g. Science">
+            </div>
+            <div class="form-group col-xl-5">
+              <label for="">Subject 8 Grade</label>
+              <input type="text" class="form-control" name="lower_school_subject_grade_8" id="lower_school_subject_grade_8" placeholder="E.g. A*, C, Merit">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Qualification Type 9</label>
+              <input type="text" class="form-control" name="lower_school_subject_type_9" id="lower_school_subject_type_9" placeholder="E.g. GCSE, O Level, BTEC/NVQ Level 2">
+            </div>
+            <div class="form-group col-xl-7">
+              <label for="">Subject 9 Name</label>
+              <input type="text" class="form-control" name="lower_school_subject_name_9" id="lower_school_subject_name_9" placeholder="E.g. Additional Science">
+            </div>
+            <div class="form-group col-xl-5">
+              <label for="">Subject 9 Grade</label>
+              <input type="text" class="form-control" name="lower_school_subject_grade_9" id="lower_school_subject_grade_9" placeholder="E.g. A*, C, Merit">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Qualification Type 10</label>
+              <input type="text" class="form-control" name="lower_school_subject_type_10" id="lower_school_subject_type_10" placeholder="E.g. GCSE, O Level, BTEC/NVQ Level 2">
+            </div>
+            <div class="form-group col-xl-7">
+              <label for="">Subject 10 Name</label>
+              <input type="text" class="form-control" name="lower_school_subject_name_10" id="lower_school_subject_name_10" placeholder="E.g. Religious Education">
+            </div>
+            <div class="form-group col-xl-5">
+              <label for="">Subject 10 Grade</label>
+              <input type="text" class="form-control" name="lower_school_subject_grade_10" id="lower_school_subject_grade_10" placeholder="E.g. A*, C, Merit">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Qualification Type 11</label>
+              <input type="text" class="form-control" name="lower_school_subject_type_11" id="lower_school_subject_type_11" placeholder="E.g. GCSE, O Level, BTEC/NVQ Level 2">
+            </div>
+            <div class="form-group col-xl-7">
+              <label for="">Subject 11 Name</label>
+              <input type="text" class="form-control" name="lower_school_subject_name_11" id="lower_school_subject_name_11" placeholder="E.g. History">
+            </div>
+            <div class="form-group col-xl-5">
+              <label for="">Subject 11 Grade</label>
+              <input type="text" class="form-control" name="lower_school_subject_grade_11" id="lower_school_subject_grade_11" placeholder="E.g. A*, C, Merit">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Were you part of any clubs? (use commas to separate):</label>
+              <input type="text" class="form-control" name="lower_school_clubs" id="lower_school_clubs" placeholder="E.g. Football, Chess, Rugby, Swimming">
+            </div>
+          </div><hr>
+          <!--SKILLS & EXTRACURRICULAR ACTIVITIES-------------------------------->
+            <!--OTHER QUALIFICATIONS--------------------------------------------->
+          <h4>Other Qualifications, Licences,  Achievements or Awards</h4>
+          <div class="form-row">
+            <div class="form-group col-xl-12">
+              <label for="">Other certification/award 1</label>
+              <input type="text" class="form-control" name="cert_1" id="cert_1" placeholder="E.g. Duke of Edinburgh Silver Award">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Date Awarded 1</label>
+              <input type="text" class="form-control" name="cert_date_1" id="cert_date_1" placeholder="E.g. February 2007">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Other certification/award 2</label>
+              <input type="text" class="form-control" name="cert_2" id="cert_2" placeholder="E.g. National Pool Lifeguard Qualification">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Date Awarded 2</label>
+              <input type="text" class="form-control" name="cert_date_2" id="cert_date_2" placeholder="E.g. May 2011">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Other certification/award 3</label>
+              <input type="text" class="form-control" name="cert_3" id="cert_3" placeholder="E.g. ABRSM Grade 5 Piano">
+            </div>
+            <div class="form-group col-xl-12">
+              <label for="">Date Awarded 3</label>
+              <input type="text" class="form-control" name="cert_date_3" id="cert_date_3" placeholder="E.g. August 2014">
+            </div>
+          </div><hr>
+            <!--HOBBIES & INTERESTS---------------------------------------------->
+          <h4>Hobbies & Interests</h4>
+          <div class="form-group">
+            <label for="">List any relevant hobbies or interests you have (separated by a comma & space):</label>
+            <input type="text" class="form-control" name="activity_1" id="activity_1" placeholder="E.g. Football, Chess, Rugby, Swimming">
+          </div><hr>
+            <!--IT Skills-------------------------------------------------------->
+          <h4>IT Skills</h4>
+          <div class="form-group">
+            <label for="">List any IT skills (separated by a comma & space):</label>
+            <input type="text" class="form-control" name="tech_skills" id="tech_skills" placeholder="E.g. MS Word, MS Excel, MS Powerpoint">
+          </div><hr>
+            <!--Languages-------------------------------------------------------->
+          <h4>Languages</h4>
+          <div class="form-row">
+            <div class="form-group col-xl-6">
+              <label for="">Language 1</label>
+              <input type="text" class="form-control" name="language_1" id="language_1" placeholder="E.g. English">
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">Fluency 1</label>
+              <select type="text" class="form-control" name="fluency_1" id="fluency_1">
+                <option>Click to select</option>
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Fluent</option>
+                <option>Native</option>
+              </select>
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">Language 2</label>
+              <input type="text" class="form-control" name="language_2" id="language_2" placeholder="E.g. Spanish">
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">Fluency 2</label>
+              <select type="text" class="form-control" name="fluency_2" id="fluency_2">
+                <option>Click to select</option>
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Fluent</option>
+                <option>Native</option>
+              </select>
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">Language 3</label>
+              <input type="text" class="form-control" name="language_3" id="language_3" placeholder="E.g. French">
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">Fluency 3</label>
+              <select type="text" class="form-control" name="fluency_3" id="fluency_3">
+                <option>Click to select</option>
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Fluent</option>
+                <option>Native</option>
+              </select>
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">Language 4</label>
+              <input type="text" class="form-control" name="language_4" id="language_4" placeholder="E.g. German">
+            </div>
+            <div class="form-group col-xl-6">
+              <label for="">Fluency 4</label>
+              <select type="text" class="form-control" name="fluency_4" id="fluency_4">
+                <option>Click to select</option>
+                <option>Beginner</option>
+                <option>Intermediate</option>
+                <option>Fluent</option>
+                <option>Native</option>
+              </select>
+            </div>
+          </div><br>
+          <!--END FORM----------------------------------------------------------->
+          <div class="form-row">
+            <button type="submit" class="btn btn-fca">Generate CV</button>
+            <br><br>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-xl-8">
+  <div class="rightside">
+    <div class="row m-6">
+      <div class="col-xl-12">
+        <!--<iframe width="100%" frameborder="0" src="../template_1_live_view"></iframe>-->
+        {% include 'construction_live_view.html' %}
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Prevent form being submitted when user presses enter within an input box -->
+<script>
+  $(document).ready(function() {
+    $(window).keydown(function(event){
+      if(event.keyCode == 13) {
+        event.preventDefault();
+        return false;
+      }
+    });
+  });
+</script>
+{% endblock %}

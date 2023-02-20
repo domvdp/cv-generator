@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Anonymous CV</title>
+      <meta charset="UTF-8">
+  </head>
+  <body>
+    <div class="live-cv-container">
+      <div id="document">
+        <header class="about-me">
+          <h1 class="about-me__name">First name <span class="about-me__last-name">Last name</span></h1>
+          <span><h6 class="about-me__address">Address part 1, Address part 2, Address part 3, Postcode.</h6></span>
+          <span class="about-me__social">
+            <h6><a href=""><i class="fa fa-phone"></i>Phone Number &nbsp|&nbsp</a></h6>
+            <h6><a href=""><i class="fab fa-codepen"></i> Email Address</a></h6>
+          </span>
+        </header>
+
+        {% if sum_1 != "Click to select" or construction_sum_1 != "Click to select" or construction_sum_2 != "Click to select" or construction_sum_3 != "Click to select" or construction_sum_4 != "Click to select" or construction_sum_5 != "Click to select (default: No)" %}
+          <section class="experience">
+            <div class="section__heading">
+              <h1>Personal Profile</h1>
+              <div class="section__heading-underline"></div>
+            </div>
+            <div class="summary">
+              {% if sum_1 != "Click to select" %}
+                {{ sum_1 }} and focused with a passion to provide the highest standard of workmanship in the construction sector.
+              {% endif %}
+
+              {% if construction_sum_1 == "Yes, I'm an experienced tradesman" %}
+                Experienced tradesman,
+              {% elif construction_sum_1 == "No, I'm not an experienced tradesman yet" %}
+                Aspiring tradesman,
+              {% endif %}
+
+              {% if construction_sum_2 != "Click to select" and construction_sum_3 != "Click to select" and construction_sum_4 != "Click to select" %}
+                skilled in {{ construction_sum_2 }}, {{ construction_sum_3 }} and {{ construction_sum_4 }}. Excels in high-pressure, fast-paced environments, and works to complete all tasks as efficiently as possible.
+              {% endif %}
+
+              {% if construction_sum_5 != "Click to select (default: No)" %}
+                Able to drive in the United Kingdom.
+              {% endif %}
+            </div>
+          </section>
+        {% endif %}
+
+        {% if company_1 != "" or company_2 != "" or company_3 != "" or company_4 != "" or job_1 != "" or job_2 != "" or job_3 != "" or job_4 != ""%}
+          <section class="experience">
+            <div class="section__heading">
+              <h1>Work Experience</h1>
+              <div class="section__heading-underline"></div>
+            </div>
+            {% if company_1 != "" or job_1 != "" %}
+              <div class="section__item">
+                <div>
+                  <h4 class="education__institution section__subheading">{{ company_1 }}</h4>
+                  <h4 class="section__date-range">
+                    {{ work_start_1 }}
+                    {% if work_start_1 != "" and work_end_1 != "" %}
+                      &nbsp-&nbsp
+                    {% endif %}
+                    {{ work_end_1 }}
+                  </h4>
+                </div>
+                <div>
+                  <h5 class="section__subsubheading">{{ job_1 }}</h5>
+                  <h5 class="section__date-range"></h5>
+                </div>
+                <ul>
+                  {% for work_1_selection in work_1_list %}
+                    {% if work_1_selection != "Click to select" %}
+                      {% if work_1_selection == "Plumbing (Commercial)" %}
+                        -&nbsp {{ work_skill_plumbing_commercial }}
+                      {% elif work_1_selection == "Plumbing (Domestic)" %}
+                        -&nbsp {{ work_skill_plumbing_domestic }}
+                      {% elif work_1_selection == "Plumbing (Domestic and Commercial)" %}
+                        -&nbsp {{ work_skill_plumbing_domestic_and_commercial }}
+                      {% elif work_1_selection == "Demolition" %}
+                        -&nbsp {{ work_skill_demolition }}
+                      {% elif work_1_selection == "Carpentry Expertise" %}
+                        -&nbsp {{ work_skill_carpentry_expertise }}
+                      {% elif work_1_selection == "Construction Machinery Operation" %}
+                        -&nbsp {{ work_skill_construction_machinery_operation }}
+                      {% elif work_1_selection == "Drywalling" %}
+                        -&nbsp {{ work_skill_drywalling }}
+                      {% elif work_1_selection == "HVAC Equipment and Ductwork" %}
+                        -&nbsp {{ work_skill_hvac_equipment_and_ductwork }}
+                      {% elif work_1_selection == "Appliance Installations" %}
+                        -&nbsp {{ work_skill_appliance_installations }}
+                      {% elif work_1_selection == "Driver" %}
+                        -&nbsp {{ work_skill_driver }}
+                      {% elif work_1_selection == "Problem solving" %}
+                        -&nbsp {{ work_skill_problem_solving }}
+                      {% elif work_1_selection == "Interpersonal skills" %}
+                        -&nbsp {{ work_skill_interpersonal_skills }}
+                      {% elif work_1_selection == "Enthusiastic" %}
+                        -&nbsp {{ work_skill_enthusiastic }}
+                      {% elif work_1_selection == "Customer Service" %}
+                        -&nbsp {{ work_skill_customer_service }}
+                      {% elif work_1_selection == "Works well under pressure" %}
+                        -&nbsp {{ work_skill_works_well_under_pressure }}
+                      {% elif work_1_selection == "Teamwork" %}
+                        -&nbsp {{ work_skill_teamwork }}
+                      {% elif work_1_selection == "Motivational" %}
+                        -&nbsp {{ work_skill_motivational }}
+                      {% elif work_1_selection == "Independent" %}
+                        -&nbsp {{ work_skill_independent }}
+                      {% elif work_1_selection == "Disciplined (organisation/time management)" %}
+                        -&nbsp {{ work_skill_disciplined_time }}
+                      {% elif work_1_selection == "Disciplined (following instructions/rules)" %}
+                        -&nbsp {{ work_skill_disciplined }}
+                      {% elif work_1_selection == "Organisation" %}
+                        -&nbsp {{ work_skill_organisation }}
+                      {% elif work_1_selection == "Flexible in work" %}
+                        -&nbsp {{ work_skill_flexible_in_work }}
+                      {% elif work_1_selection == "Trustworthy" %}
+                        -&nbsp {{ work_skill_trustworthy }}
+                      {% elif work_1_selection == "Attention to detail" %}
+                        -&nbsp {{ work_skill_attention_to_detail }}
+                      {% endif %}
+                      <br>
+                    {% endif %}
+                  {% endfor %}
+                  </ul>
+              </div>
+            {% endif %}
+            {% if company_2 != "" or job_2 != "" %}
+              <div class="section__item">
+                <div>
+                  <h4 class="education__institution section__subheading">{{ company_2 }}</h4>
+                  <h4 class="section__date-range">
+                    {{ work_start_2 }}
+                    {% if work_start_2 != "" and work_end_2 != "" %}
+                      &nbsp-&nbsp
+                    {% endif %}
+                    {{ work_end_2 }}
+                  </h4>
+                </div>
+                <div>
+                  <h5 class="section__subsubheading">{{ job_2 }}</h5>
+                  <h5 class="section__date-range"></h5>
+                </div>
+                <ul>
+                  {% for work_2_selection in work_2_list %}
+                    {% if work_2_selection != "Click to select" %}
+                      {% if work_2_selection == "Plumbing (Commercial)" %}
+                        -&nbsp {{ work_skill_plumbing_commercial }}
+                      {% elif work_2_selection == "Plumbing (Domestic)" %}
+                        -&nbsp {{ work_skill_plumbing_domestic }}
+                      {% elif work_2_selection == "Plumbing (Domestic and Commercial)" %}
+                        -&nbsp {{ work_skill_plumbing_domestic_and_commercial }}
+                      {% elif work_2_selection == "Demolition" %}
+                        -&nbsp {{ work_skill_demolition }}
+                      {% elif work_2_selection == "Carpentry Expertise" %}
+                        -&nbsp {{ work_skill_carpentry_expertise }}
+                      {% elif work_2_selection == "Construction Machinery Operation" %}
+                        -&nbsp {{ work_skill_construction_machinery_operation }}
+                      {% elif work_2_selection == "Drywalling" %}
+                        -&nbsp {{ work_skill_drywalling }}
+                      {% elif work_2_selection == "HVAC Equipment and Ductwork" %}
+                        -&nbsp {{ work_skill_hvac_equipment_and_ductwork }}
+                      {% elif work_2_selection == "Appliance Installations" %}
+                        -&nbsp {{ work_skill_appliance_installations }}
+                      {% elif work_2_selection == "Driver" %}
+                        -&nbsp {{ work_skill_driver }}
+                      {% elif work_2_selection == "Problem solving" %}
+                        -&nbsp {{ work_skill_problem_solving }}
+                      {% elif work_2_selection == "Interpersonal skills" %}
+                        -&nbsp {{ work_skill_interpersonal_skills }}
+                      {% elif work_2_selection == "Enthusiastic" %}
+                        -&nbsp {{ work_skill_enthusiastic }}
+                      {% elif work_2_selection == "Customer Service" %}
+                        -&nbsp {{ work_skill_customer_service }}
+                      {% elif work_2_selection == "Works well under pressure" %}
+                        -&nbsp {{ work_skill_works_well_under_pressure }}
+                      {% elif work_2_selection == "Teamwork" %}
+                        -&nbsp {{ work_skill_teamwork }}
+                      {% elif work_2_selection == "Motivational" %}
+                        -&nbsp {{ work_skill_motivational }}
+                      {% elif work_2_selection == "Independent" %}
+                        -&nbsp {{ work_skill_independent }}
+                      {% elif work_2_selection == "Disciplined (organisation/time management)" %}
+                        -&nbsp {{ work_skill_disciplined_time }}
+                      {% elif work_2_selection == "Disciplined (following instructions/rules)" %}
+                        -&nbsp {{ work_skill_disciplined }}
+                      {% elif work_2_selection == "Organisation" %}
+                        -&nbsp {{ work_skill_organisation }}
+                      {% elif work_2_selection == "Flexible in work" %}
+                        -&nbsp {{ work_skill_flexible_in_work }}
+                      {% elif work_2_selection == "Trustworthy" %}
+                        -&nbsp {{ work_skill_trustworthy }}
+                      {% elif work_2_selection == "Attention to detail" %}
+                        -&nbsp {{ work_skill_attention_to_detail }}
+                      {% endif %}
+                      <br>
+                    {% endif %}
+                  {% endfor %}
+                  </ul>
+              </div>
+            {% endif %}
+            {% if company_3 != "" or job_3 != "" %}
+              <div class="section__item">
+                <div>
+                  <h4 class="education__institution section__subheading">{{ company_3 }}</h4>
+                  <h4 class="section__date-range">
+                    {{ work_start_3 }}
+                    {% if work_start_3 != "" and work_end_3 != "" %}
+                      &nbsp-&nbsp
+                    {% endif %}
+                    {{ work_end_3 }}
+                  </h4>
+                </div>
+                <div>
+                  <h5 class="section__subsubheading">{{ job_3 }}</h5>
+                  <h5 class="section__date-range"></h5>
+                </div>
+                <ul>
+                  {% for work_3_selection in work_3_list %}
+                    {% if work_3_selection != "Click to select" %}
+                      {% if work_3_selection == "Plumbing (Commercial)" %}
+                        -&nbsp {{ work_skill_plumbing_commercial }}
+                      {% elif work_3_selection == "Plumbing (Domestic)" %}
+                        -&nbsp {{ work_skill_plumbing_domestic }}
+                      {% elif work_3_selection == "Plumbing (Domestic and Commercial)" %}
+                        -&nbsp {{ work_skill_plumbing_domestic_and_commercial }}
+                      {% elif work_3_selection == "Demolition" %}
+                        -&nbsp {{ work_skill_demolition }}
+                      {% elif work_3_selection == "Carpentry Expertise" %}
+                        -&nbsp {{ work_skill_carpentry_expertise }}
+                      {% elif work_3_selection == "Construction Machinery Operation" %}
+                        -&nbsp {{ work_skill_construction_machinery_operation }}
+                      {% elif work_3_selection == "Drywalling" %}
+                        -&nbsp {{ work_skill_drywalling }}
+                      {% elif work_3_selection == "HVAC Equipment and Ductwork" %}
+                        -&nbsp {{ work_skill_hvac_equipment_and_ductwork }}
+                      {% elif work_3_selection == "Appliance Installations" %}
+                        -&nbsp {{ work_skill_appliance_installations }}
+                      {% elif work_3_selection == "Driver" %}
+                        -&nbsp {{ work_skill_driver }}
+                      {% elif work_3_selection == "Problem solving" %}
+                        -&nbsp {{ work_skill_problem_solving }}
+                      {% elif work_3_selection == "Interpersonal skills" %}
+                        -&nbsp {{ work_skill_interpersonal_skills }}
+                      {% elif work_3_selection == "Enthusiastic" %}
+                        -&nbsp {{ work_skill_enthusiastic }}
+                      {% elif work_3_selection == "Customer Service" %}
+                        -&nbsp {{ work_skill_customer_service }}
+                      {% elif work_3_selection == "Works well under pressure" %}
+                        -&nbsp {{ work_skill_works_well_under_pressure }}
+                      {% elif work_3_selection == "Teamwork" %}
+                        -&nbsp {{ work_skill_teamwork }}
+                      {% elif work_3_selection == "Motivational" %}
+                        -&nbsp {{ work_skill_motivational }}
+                      {% elif work_3_selection == "Independent" %}
+                        -&nbsp {{ work_skill_independent }}
+                      {% elif work_3_selection == "Disciplined (organisation/time management)" %}
+                        -&nbsp {{ work_skill_disciplined_time }}
+                      {% elif work_3_selection == "Disciplined (following instructions/rules)" %}
+                        -&nbsp {{ work_skill_disciplined }}
+                      {% elif work_3_selection == "Organisation" %}
+                        -&nbsp {{ work_skill_organisation }}
+                      {% elif work_3_selection == "Flexible in work" %}
+                        -&nbsp {{ work_skill_flexible_in_work }}
+                      {% elif work_3_selection == "Trustworthy" %}
+                        -&nbsp {{ work_skill_trustworthy }}
+                      {% elif work_3_selection == "Attention to detail" %}
+                        -&nbsp {{ work_skill_attention_to_detail }}
+                      {% endif %}
+                      <br>
+                    {% endif %}
+                  {% endfor %}
+                  </ul>
+              </div>
+            {% endif %}
+            {% if company_4 != "" or job_4 != "" %}
+              <div class="section__item">
+                <div>
+                  <h4 class="education__institution section__subheading">{{ company_4 }}</h4>
+                  <h4 class="section__date-range">
+                    {{ work_start_4 }}
+                    {% if work_start_4 != "" and work_end_4 != "" %}
+                      &nbsp-&nbsp
+                    {% endif %}
+                    {{ work_end_4 }}
+                  </h4>
+                </div>
+                <div>
+                  <h5 class="section__subsubheading">{{ job_4 }}</h5>
+                  <h5 class="section__date-range"></h5>
+                </div>
+                <ul>
+                  {% for work_4_selection in work_4_list %}
+                    {% if work_4_selection != "Click to select" %}
+                      {% if work_4_selection == "Plumbing (Commercial)" %}
+                        -&nbsp {{ work_skill_plumbing_commercial }}
+                      {% elif work_4_selection == "Plumbing (Domestic)" %}
+                        -&nbsp {{ work_skill_plumbing_domestic }}
+                      {% elif work_4_selection == "Plumbing (Domestic and Commercial)" %}
+                        -&nbsp {{ work_skill_plumbing_domestic_and_commercial }}
+                      {% elif work_4_selection == "Demolition" %}
+                        -&nbsp {{ work_skill_demolition }}
+                      {% elif work_4_selection == "Carpentry Expertise" %}
+                        -&nbsp {{ work_skill_carpentry_expertise }}
+                      {% elif work_4_selection == "Construction Machinery Operation" %}
+                        -&nbsp {{ work_skill_construction_machinery_operation }}
+                      {% elif work_4_selection == "Drywalling" %}
+                        -&nbsp {{ work_skill_drywalling }}
+                      {% elif work_4_selection == "HVAC Equipment and Ductwork" %}
+                        -&nbsp {{ work_skill_hvac_equipment_and_ductwork }}
+                      {% elif work_4_selection == "Appliance Installations" %}
+                        -&nbsp {{ work_skill_appliance_installations }}
+                      {% elif work_4_selection == "Driver" %}
+                        -&nbsp {{ work_skill_driver }}
+                      {% elif work_4_selection == "Problem solving" %}
+                        -&nbsp {{ work_skill_problem_solving }}
+                      {% elif work_4_selection == "Interpersonal skills" %}
+                        -&nbsp {{ work_skill_interpersonal_skills }}
+                      {% elif work_4_selection == "Enthusiastic" %}
+                        -&nbsp {{ work_skill_enthusiastic }}
+                      {% elif work_4_selection == "Customer Service" %}
+                        -&nbsp {{ work_skill_customer_service }}
+                      {% elif work_4_selection == "Works well under pressure" %}
+                        -&nbsp {{ work_skill_works_well_under_pressure }}
+                      {% elif work_4_selection == "Teamwork" %}
+                        -&nbsp {{ work_skill_teamwork }}
+                      {% elif work_4_selection == "Motivational" %}
+                        -&nbsp {{ work_skill_motivational }}
+                      {% elif work_4_selection == "Independent" %}
+                        -&nbsp {{ work_skill_independent }}
+                      {% elif work_4_selection == "Disciplined (organisation/time management)" %}
+                        -&nbsp {{ work_skill_disciplined_time }}
+                      {% elif work_4_selection == "Disciplined (following instructions/rules)" %}
+                        -&nbsp {{ work_skill_disciplined }}
+                      {% elif work_4_selection == "Organisation" %}
+                        -&nbsp {{ work_skill_organisation }}
+                      {% elif work_4_selection == "Flexible in work" %}
+                        -&nbsp {{ work_skill_flexible_in_work }}
+                      {% elif work_4_selection == "Trustworthy" %}
+                        -&nbsp {{ work_skill_trustworthy }}
+                      {% elif work_4_selection == "Attention to detail" %}
+                        -&nbsp {{ work_skill_attention_to_detail }}
+                      {% endif %}
+                      <br>
+                    {% endif %}
+                  {% endfor %}
+                  </ul>
+              </div>
+            {% endif %}
+          </section>
+        {% endif %}
+
+        {% if college_name != "" or upper_school_name != "" or lower_school_name != "" or college_course_type != "" %}
+          <section class="experience">
+            <div class="section__heading">
+              <h1>Education</h1>
+              <div class="section__heading-underline"></div>
+            </div>
+            {% if college_name != "" or college_course_name != "" %}
+              <div class="section__item">
+                <div>
+                  <h4 class="education__institution section__subheading">{{ college_course_type }} {{ college_course_name }}</h4>
+                  <h4 class="section__date-range">
+                    {{ college_start }}
+                    {% if college_start != "" and college_end != "" %}
+                      &nbsp-&nbsp
+                    {% endif %}
+                    {{ college_end }}
+                  </h4>
+                </div>
+                <div>
+                  <h5 class="section__subsubheading">
+                    {{ college_name }}
+                    {% if college_grade != "" %}
+                      ,&nbsp
+                    {% endif %}
+                    {% if college_grade != "" %}
+                      Grade: {{ college_grade }}
+                    {% endif %}
+                  </h5>
+                  <h5 class="section__date-range"></h5>
+                </div>
+                <ul>
+                  {% if college_modules != "" %}
+                    -&nbsp Modules: {{ college_modules }}<br>
+                  {% endif %}
+                  {% if college_notable != "" %}
+                    -&nbsp Notable Positions: {{ college_notable }}<br>
+                  {% endif %}
+                  {% if college_societies != "" %}
+                    -&nbsp Clubs/Societies: {{ college_societies }}
+                  {% endif %}
+                </ul>
+              </div>
+            {% endif %}
+            {% if upper_school_name != "" %}
+              <div class="section__item">
+                <div>
+                  <h4 class="education__institution section__subheading">{{ upper_school_name }}</h4>
+                  <h4 class="section__date-range">
+                    {{ upper_school_start }}
+                    {% if upper_school_start != "" and upper_school_end != "" %}
+                      &nbsp-&nbsp
+                    {% endif %}
+                    {{ upper_school_end }}
+                  </h4>
+                </div>
+                <div>
+                  <h5 class="section__subsubheading">
+                  </h5>
+                  <h5 class="section__date-range"></h5>
+                </div>
+                <ul>
+                  {% if upper_school_subject_type_1 != "" %}
+                    -&nbsp {{ upper_school_subject_type_1 }} {{ upper_school_subject_name_1 }} ({{ upper_school_subject_grade_1 }})
+                  {% endif %}
+                  {% if upper_school_subject_type_2 != "" %}
+                    &nbsp|&nbsp {{ upper_school_subject_type_2 }} {{ upper_school_subject_name_2 }} ({{ upper_school_subject_grade_2 }})
+                  {% endif %}
+                  {% if upper_school_subject_type_3 != "" %}
+                    &nbsp|&nbsp {{ upper_school_subject_type_3 }} {{ upper_school_subject_name_3 }} ({{ upper_school_subject_grade_3 }})
+                  {% endif %}
+                  {% if upper_school_subject_type_4 != "" %}
+                    &nbsp|&nbsp {{ upper_school_subject_type_4 }} {{ upper_school_subject_name_4 }} ({{ upper_school_subject_grade_4 }})
+                  {% endif %}
+                  {% if upper_school_subject_type_5 != "" %}
+                    &nbsp|&nbsp {{ upper_school_subject_type_5 }} {{ upper_school_subject_name_5 }} ({{ upper_school_subject_grade_5 }})
+                  {% endif %}
+                  <!-- If school clubs listed in addition to subjects, seperate them on different lines -->
+                  {% if upper_school_clubs != "" and upper_school_subject_type_1 != "" %}
+                    <br>
+                  {% endif %}
+                  {% if upper_school_clubs != "" %}
+                    -&nbsp School clubs: {{ upper_school_clubs }}
+                  {% endif %}
+                  <!-- If A Level and GCSEs completed within same school -->
+                  {% if upper_school_name == lower_school_name %}
+                    <br>
+                    {% if lower_school_subject_type_1 != "" %}
+                      -&nbsp {{ lower_school_subject_type_1 }} {{ lower_school_subject_name_1 }} ({{ lower_school_subject_grade_1 }})
+                    {% endif %}
+                    {% if lower_school_subject_type_2 != "" %}
+                      &nbsp|&nbsp {{ lower_school_subject_type_2 }} {{ lower_school_subject_name_2 }} ({{ lower_school_subject_grade_2 }})
+                    {% endif %}
+                    {% if lower_school_subject_type_3 != "" %}
+                      &nbsp|&nbsp {{ lower_school_subject_type_3 }} {{ lower_school_subject_name_3 }} ({{ lower_school_subject_grade_3 }})
+                    {% endif %}
+                    {% if lower_school_subject_type_4 != "" %}
+                      &nbsp|&nbsp {{ lower_school_subject_type_4 }} {{ lower_school_subject_name_4 }} ({{ lower_school_subject_grade_4 }})
+                    {% endif %}
+                    {% if lower_school_subject_type_5 != "" %}
+                      &nbsp|&nbsp {{ lower_school_subject_type_5 }} {{ lower_school_subject_name_5 }} ({{ lower_school_subject_grade_5 }})
+                    {% endif %}
+                    {% if lower_school_subject_type_6 != "" %}
+                      &nbsp|&nbsp {{ lower_school_subject_type_6 }} {{ lower_school_subject_name_6 }} ({{ lower_school_subject_grade_6 }})
+                    {% endif %}
+                    {% if lower_school_subject_type_7 != "" %}
+                      &nbsp|&nbsp {{ lower_school_subject_type_7 }} {{ lower_school_subject_name_7 }} ({{ lower_school_subject_grade_7 }})
+                    {% endif %}
+                    {% if lower_school_subject_type_8 != "" %}
+                      &nbsp|&nbsp {{ lower_school_subject_type_8 }} {{ lower_school_subject_name_8 }} ({{ lower_school_subject_grade_8 }})
+                    {% endif %}
+                    {% if lower_school_subject_type_9 != "" %}
+                      &nbsp|&nbsp {{ lower_school_subject_type_9 }} {{ lower_school_subject_name_9 }} ({{ lower_school_subject_grade_9 }})
+                    {% endif %}
+                    {% if lower_school_subject_type_10 != "" %}
+                      &nbsp|&nbsp {{ lower_school_subject_type_10 }} {{ lower_school_subject_name_10 }} ({{ lower_school_subject_grade_10 }})
+                    {% endif %}
+                    {% if lower_school_subject_type_11 != "" %}
+                      &nbsp|&nbsp {{ lower_school_subject_type_11 }} {{ lower_school_subject_name_11 }} ({{ lower_school_subject_grade_11 }})
+                    {% endif %}
+                  {% endif %}
+                </ul>
+              </div>
+            {% endif %}
+            {% if lower_school_name != "" and lower_school_name != upper_school_name %}
+              <div class="section__item">
+                <div>
+                  <h4 class="education__institution section__subheading">{{ lower_school_name }}</h4>
+                  <h4 class="section__date-range">
+                    {{ lower_school_start }}
+                    {% if lower_school_start != "" and lower_school_end != "" %}
+                      &nbsp-&nbsp
+                    {% endif %}
+                    {{ lower_school_end }}
+                  </h4>
+                </div>
+                <div>
+                  <h5 class="section__subsubheading">
+                  </h5>
+                  <h5 class="section__date-range"></h5>
+                </div>
+                <ul>
+                  {% if lower_school_subject_type_1 != "" %}
+                    -&nbsp {{ lower_school_subject_type_1 }} {{ lower_school_subject_name_1 }} ({{ lower_school_subject_grade_1 }})
+                  {% endif %}
+                  {% if lower_school_subject_type_2 != "" %}
+                    &nbsp|&nbsp {{ lower_school_subject_type_2 }} {{ lower_school_subject_name_2 }} ({{ lower_school_subject_grade_2 }})
+                  {% endif %}
+                  {% if lower_school_subject_type_3 != "" %}
+                    &nbsp|&nbsp {{ lower_school_subject_type_3 }} {{ lower_school_subject_name_3 }} ({{ lower_school_subject_grade_3 }})
+                  {% endif %}
+                  {% if lower_school_subject_type_4 != "" %}
+                    &nbsp|&nbsp {{ lower_school_subject_type_4 }} {{ lower_school_subject_name_4 }} ({{ lower_school_subject_grade_4 }})
+                  {% endif %}
+                  {% if lower_school_subject_type_5 != "" %}
+                    &nbsp|&nbsp {{ lower_school_subject_type_5 }} {{ lower_school_subject_name_5 }} ({{ lower_school_subject_grade_5 }})
+                  {% endif %}
+                  {% if lower_school_subject_type_6 != "" %}
+                    &nbsp|&nbsp {{ lower_school_subject_type_6 }} {{ lower_school_subject_name_6 }} ({{ lower_school_subject_grade_6 }})
+                  {% endif %}
+                  {% if lower_school_subject_type_7 != "" %}
+                    &nbsp|&nbsp {{ lower_school_subject_type_7 }} {{ lower_school_subject_name_7 }} ({{ lower_school_subject_grade_7 }})
+                  {% endif %}
+                  {% if lower_school_subject_type_8 != "" %}
+                    &nbsp|&nbsp {{ lower_school_subject_type_8 }} {{ lower_school_subject_name_8 }} ({{ lower_school_subject_grade_8 }})
+                  {% endif %}
+                  {% if lower_school_subject_type_9 != "" %}
+                    &nbsp|&nbsp {{ lower_school_subject_type_9 }} {{ lower_school_subject_name_9 }} ({{ lower_school_subject_grade_9 }})
+                  {% endif %}
+                  {% if lower_school_subject_type_10 != "" %}
+                    &nbsp|&nbsp {{ lower_school_subject_type_10 }} {{ lower_school_subject_name_10 }} ({{ lower_school_subject_grade_10 }})
+                  {% endif %}
+                  {% if lower_school_subject_type_11 != "" %}
+                    &nbsp|&nbsp {{ lower_school_subject_type_11 }} {{ lower_school_subject_name_11 }} ({{ lower_school_subject_grade_11 }})
+                  {% endif %}
+                  <!-- If school clubs listed in addition to subjects, seperate them on different lines -->
+                  {% if lower_school_clubs != "" and lower_school_subject_type_1 != "" %}
+                    <br>
+                  {% endif %}
+                  {% if lower_school_clubs != "" %}
+                    -&nbsp School clubs: {{ lower_school_clubs }}
+                  {% endif %}
+                </ul>
+              </div>
+            {% endif %}
+          </section>
+        {% endif %}
+
+        {% if cert_1 != "" or activity_1 != "" or tech_skills != "" or language_1 != "" %}
+          <section class="experience">
+            <div class="section__heading">
+              <h1>Skills & Extracurricular Activities</h1>
+              <div class="section__heading-underline"></div>
+            </div>
+            {% if cert_1 != "" %}
+              <div class="section__item">
+                <div>
+                  <h4 class="education__institution section__subheading">Other Certifications/Awards</h4>
+                  <h4 class="section__date-range"></h4>
+                </div>
+                <ul>
+                  {% if cert_1 != "" %}
+                    -&nbsp {{ cert_1 }} (Date Achieved: {{ cert_date_1 }})
+                  {% endif %}
+                  {% if cert_1 != "" and cert_2 != "" %}
+                    <br>
+                    -&nbsp {{ cert_2 }} (Date Achieved: {{ cert_date_2 }})
+                  {% endif %}
+                  {% if cert_1 != "" and cert_2 != "" and cert_3 != "" %}
+                    <br>
+                    -&nbsp {{ cert_3 }} (Date Achieved: {{ cert_date_3 }})
+                  {% endif %}
+                </ul>
+              </div>
+            {% endif %}
+            {% if activity_1 != "" %}
+              <div class="section__item">
+                <div>
+                  <h4 class="education__institution section__subheading">Hobbies & Interests</h4>
+                  <h4 class="section__date-range"></h4>
+                </div>
+                <ul>
+                  -&nbsp {{ activity_1 }}
+                </ul>
+              </div>
+            {% endif %}
+            {% if tech_skills != "" %}
+              <div class="section__item">
+                <div>
+                  <h4 class="education__institution section__subheading">IT Skills</h4>
+                  <h4 class="section__date-range"></h4>
+                </div>
+                <ul>
+                  -&nbsp {{ tech_skills }}
+                </ul>
+              </div>
+            {% endif %}
+            <div class="section__item">
+              <div>
+                <h4 class="education__institution section__subheading">Languages</h4>
+                <h4 class="section__date-range"></h4>
+              </div>
+              <ul>
+                {% if language_1 != "" %}
+                  -&nbsp {{ language_1 }} (Fluency: {{ fluency_1 }})
+                {% endif %}
+                {% if language_1 != "" and language_2 != "" %}
+                  <br>
+                  -&nbsp {{ language_2 }} (Fluency: {{ fluency_2 }})
+                {% endif %}
+                {% if language_1 != "" and language_2 != "" and language_3 != "" %}
+                  <br>
+                  -&nbsp {{ language_3 }} (Fluency: {{ fluency_3 }})
+                {% endif %}
+                {% if language_1 != "" and language_2 != "" and language_3 != "" and language_4 != "" %}
+                  <br>
+                  -&nbsp {{ language_4 }} (Fluency: {{ fluency_4 }})
+                {% endif %}
+              </ul>
+            </div>
+          </section>
+        {% endif %}
+      </div>
+    </div>
+  </body>
+</html>

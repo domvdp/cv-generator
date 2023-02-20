@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container flex-grow-1"> <!-- "flex-grow-1" is part of keeping footer at bottom of page -->
+  <div class="row m-6">
+    <div class="col-md-12">
+      <h1>About</h1>
+      <hr>
+    </div>
+  </div>
+
+  <div class="row m-6 text-box">
+    <div class="col-md-12">
+      <br>
+      <h3>Who is it for?</h3>
+      <p>This is a user-friendly and custom-made digital solution for Caritas Anchor House (CAH) residents to create a strong foundational CV efficiently, but this is also a universal product in aiding employability for everyone.</p>
+      <p>Through automation and industry research, we’ve created this tool with the aim of saving resources whilst also ensuring high standards of each CV.</p>
+      <hr>
+
+      <br>
+      <h3>What templates are available?</h3>
+      <p>This CV generator caters for the 3 most common target industries among residents at CAH:</p>
+      <ol>
+        <li><a href="{% url 'customer_service_form' %}">Customer Service</a></li>
+        <li><a href="{% url 'construction_form' %}">Construction</a></li>
+        <li><a href="{% url 'security_form' %}">Security</a></li>
+      </ol>
+      <p>Each template includes a single form with customizable selections for unique and tailored content
+      using drop-down options.</p>
+      <hr>
+
+      <br>
+      <h3>How does it work?</h3>
+      <p>Please view the following short 50 second video for a very quick introduction.</p>
+      <video width="100%" controls>
+        <source src="{% static 'video/cv_generator_demo.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p><b>Steps</b>:</p>
+      <ol>
+        <li>Select a template</li>
+        <li>Complete the form</li>
+        <li>Submit the form</li>
+        <li>Save the PDF to your computer</li>
+        <li>Use a PDF to Word converter (.pdf to .docx) and edit in Microsoft Word</li>
+      </ol>
+      <hr>
+
+      <br>
+      <h3>Is my data private?</h3>
+      <p>From our risk assessment, we considered a range of implications on data protection and privacy.</p>
+      <p>  No Personally Identifiable Information (PII) is asked for on this website, and so we will not ask you to
+      provide any of the following information:</p>
+      <ul>
+        <li>Full name</li>
+        <li>Address</li>
+        <li>Contact details (phone number, email address etc)</li>
+        <li>Other PII (Social Security number, driver’s license number, bank account number, passport number etc)</li>
+      </ul>
+      <p>You can open and edit your CV to include your full name, address and contact details in Microsoft
+      Word once you’ve converted the PDF file (to .docx format).</p>
+
+      <p>For more details about data privacy, please read our Privacy Policy and Cookies Policy.</p>
+    </div>
+  </div>
+
+  <div class="row images-about">
+    <div class="col-xl-4 images-about">
+      <img src="{% static 'images/team_evolve_logo_no_bg.png' %}" class="img-fluid" alt="Team Evolve Logo" />
+    </div>
+    <div class="col-xl-4 image-slogan">
+      <img src="{% static 'images/homelessness_slogan.png' %}" class="img-fluid image-slogan" alt="Homelessness Slogan" />
+    </div>
+    <div class="col-xl-4 images-about">
+      <img src="{% static 'images/CAH_logo_no_bg.png' %}" class="img-fluid" alt="Caritas Anchor House Logo" />
+    </div>
+  </div>
+</div>
+{% endblock %}

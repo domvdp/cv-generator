@@ -1,0 +1,747 @@
+{% load static %}
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!DOCTYPE html>
+<div class="live-cv-container">
+  <div id="document">
+    <header class="about-me">
+      <h1 class="about-me__name">First name <span class="about-me__last-name">Last name</span></h1>
+      <span><h6 class="about-me__address">Address part 1, Address part 2, Address part 3, Postcode.</h6></span>
+      <span class="about-me__social">
+        <h6><a href=""><i class="fa fa-phone"></i>Phone Number &nbsp|&nbsp</a></h6>
+        <h6><a href=""><i class="fab fa-codepen"></i> Email Address</a></h6>
+      </span>
+    </header>
+
+    <script>
+      function emptyIdContent(text_to_remove, id_to_empty, hash_id_to_empty_1, hash_id_to_empty_2, hash_id_to_empty_3) {
+        if (document.getElementById(id_to_empty).innerHTML == text_to_remove) {
+          $(hash_id_to_empty_1).empty();
+          $(hash_id_to_empty_2).empty();
+          $(hash_id_to_empty_3).empty();
+        }
+      }
+
+      function inputBoxListener(input_id, output_id, symbols) {
+        var inputBox = document.getElementById(input_id);
+
+        inputBox.onkeyup = function() {
+          document.getElementById(output_id).innerHTML = this.value;
+
+          if (input_id == 'company_1' || input_id == 'company_2' || input_id == 'company_3' || input_id == 'company_4' ||
+              input_id == 'job_1' || input_id == 'job_2' || input_id == 'job_3' || input_id == 'job_4') {
+            $("#work_head").empty().append("Work Experience <div class='section__heading-underline'></div>");
+          }
+          if (document.getElementById('print_company_1').innerHTML == "" && document.getElementById('print_company_2').innerHTML == "" &&
+              document.getElementById('print_company_3').innerHTML == "" && document.getElementById('print_company_4').innerHTML == "" &&
+              document.getElementById('print_job_1').innerHTML == "" && document.getElementById('print_job_2').innerHTML == "" &&
+              document.getElementById('print_job_3').innerHTML == "" && document.getElementById('print_job_4').innerHTML == "") {
+            $("#work_head").empty();
+          }
+
+          if (input_id == 'college_name' || input_id == 'upper_school_name' || input_id == 'lower_school_name' || input_id == 'college_course_type') {
+            $("#education_head").empty().append("Education <div class='section__heading-underline'></div>");
+          }
+          if (document.getElementById('print_college_name').innerHTML == "" && document.getElementById('print_upper_school_name').innerHTML == "" &&
+              document.getElementById('print_lower_school_name').innerHTML == "" && document.getElementById('print_college_course_type').innerHTML == "") {
+            $("#education_head").empty();
+          }
+
+          if (input_id == 'cert_1' || input_id == 'cert_2' || input_id == 'cert_3' || input_id == 'activity_1' || input_id == 'tech_skills' || input_id == 'language_1' || input_id == 'language_2' || input_id == 'language_3' || input_id == 'language_4') {
+            $("#extracurricular_head").empty().append("Skills & Extracurricular Activities <div class='section__heading-underline'></div>");
+          }
+          if (document.getElementById('print_cert_1').innerHTML == "" && document.getElementById('print_cert_2').innerHTML == "" &&
+              document.getElementById('print_cert_3').innerHTML == "" && document.getElementById('print_activity_1').innerHTML == "" &&
+              document.getElementById('print_tech_skills').innerHTML == "" && document.getElementById('print_language_1').innerHTML == "" &&
+              document.getElementById('print_language_2').innerHTML == "" && document.getElementById('print_language_3').innerHTML == "" &&
+              document.getElementById('print_language_4').innerHTML == "") {
+            $("#extracurricular_head").empty();
+          }
+
+          if (input_id == 'cert_1' || input_id == 'cert_2' || input_id == 'cert_3') {
+            $('#cert_head').empty().append("Other Certifications/Awards");
+          }
+          if (document.getElementById('print_cert_1').innerHTML == "" && document.getElementById('print_cert_2').innerHTML == "" &&
+              document.getElementById('print_cert_3').innerHTML == "") {
+            $("#cert_head").empty();
+          }
+
+          if (input_id == 'activity_1') {
+            $('#activity_head').empty().append("Hobbies & Interests");
+          }
+          emptyIdContent("", 'print_activity_1', "#activity_head");
+
+          if (input_id == 'tech_skills') {
+            $('#tech_skills_head').empty().append("IT Skills");
+          }
+          emptyIdContent("", 'print_tech_skills', "#tech_skills_head");
+
+          if (input_id == 'language_1' || input_id == 'language_2' || input_id == 'language_3' || input_id == 'language_4') {
+            $('#language_head').empty().append("Languages");
+          }
+          if (document.getElementById('print_language_1').innerHTML == "" && document.getElementById('print_language_2').innerHTML == "" &&
+              document.getElementById('print_language_3').innerHTML == "" && document.getElementById('print_language_4').innerHTML == "") {
+            $("#language_head").empty();
+          }
+
+          if (input_id == 'work_end_1' || input_id == 'work_end_2' || input_id == 'work_end_3' || input_id == 'work_end_4' || input_id == 'college_end' || input_id == 'upper_school_end' || input_id =='upper_school_subject_type_1' || input_id == 'lower_school_end' || input_id =='lower_school_subject_type_1' || input_id == 'cert_1' || input_id == 'cert_2' || input_id == 'cert_3' || input_id == 'activity_1' || input_id == 'tech_skills' || input_id == 'language_1' || input_id == 'language_2' || input_id == 'language_3' || input_id == 'language_4') {
+            $(symbols).prepend("- ");
+          }
+          emptyIdContent("- ", 'print_work_end_1', "#print_work_end_1");
+          emptyIdContent("- ", 'print_work_end_2', "#print_work_end_2");
+          emptyIdContent("- ", 'print_work_end_3', "#print_work_end_3");
+          emptyIdContent("- ", 'print_work_end_4', "#print_work_end_4");
+          emptyIdContent("- ", 'print_college_end', "#print_college_end");
+          emptyIdContent("- ", 'print_upper_school_end', "#print_upper_school_end");
+          emptyIdContent("- ", 'print_upper_school_subject_type_1', "#print_upper_school_subject_type_1");
+          emptyIdContent("- ", 'print_lower_school_end', "#print_lower_school_end");
+          emptyIdContent("- ", 'print_lower_school_subject_type_1', "#print_lower_school_subject_type_1");
+          emptyIdContent("- ", 'print_cert_1', "#print_cert_1");
+          emptyIdContent("- ", 'print_cert_2', "#print_cert_2");
+          emptyIdContent("- ", 'print_cert_3', "#print_cert_3");
+          emptyIdContent("- ", 'print_activity_1', "#print_activity_1");
+          emptyIdContent("- ", 'print_tech_skills', "#print_tech_skills");
+          emptyIdContent("- ", 'print_language_1', "#print_language_1");
+          emptyIdContent("- ", 'print_language_2', "#print_language_2");
+          emptyIdContent("- ", 'print_language_3', "#print_language_3");
+          emptyIdContent("- ", 'print_language_4', "#print_language_4");
+
+          if (input_id =='college_modules') {
+            $(symbols).prepend("- Modules: ");
+          }
+          emptyIdContent("- Modules: ", 'print_college_modules', "#print_college_modules");
+
+          if (input_id =='college_notable') {
+            $(symbols).prepend("- Notable Positions: ");
+          }
+          emptyIdContent("- Notable Positions: ", 'print_college_notable', "#print_college_notable");
+
+          if (input_id =='college_societies') {
+            $(symbols).prepend("- Clubs/Societies: ");
+          }
+          emptyIdContent("- Clubs/Societies: ", 'print_college_societies', "#print_college_societies");
+
+          if (input_id == 'college_grade') {
+            $(symbols).prepend(", Grade: ");
+          }
+          emptyIdContent(", Grade: ", 'print_college_grade', "#print_college_grade");
+
+          if (input_id == 'upper_school_clubs' || input_id == 'lower_school_clubs') {
+            $(symbols).prepend("- School clubs: ");
+          }
+          emptyIdContent("- School clubs: ", 'print_upper_school_clubs', "#print_upper_school_clubs");
+          emptyIdContent("- School clubs: ", 'print_lower_school_clubs', "#print_lower_school_clubs");
+
+          if (input_id == 'cert_date_1' || input_id == 'cert_date_2' || input_id == 'cert_date_3') {
+            $(symbols).prepend(" (Date Achieved: ");
+            $(symbols).append(")");
+          }
+          emptyIdContent(" (Date Achieved: )", 'print_cert_date_1', "#print_cert_date_1");
+          emptyIdContent(" (Date Achieved: )", 'print_cert_date_2', "#print_cert_date_2");
+          emptyIdContent(" (Date Achieved: )", 'print_cert_date_3', "#print_cert_date_3");
+
+          if (input_id == 'upper_school_subject_grade_1' || input_id == 'upper_school_subject_grade_2' || input_id == 'upper_school_subject_grade_3' || input_id == 'upper_school_subject_grade_4' || input_id == 'upper_school_subject_grade_5' ||
+              input_id == 'lower_school_subject_grade_1' || input_id == 'lower_school_subject_grade_2' || input_id == 'lower_school_subject_grade_3' || input_id == 'lower_school_subject_grade_4' || input_id == 'lower_school_subject_grade_5' || input_id == 'lower_school_subject_grade_6' || input_id == 'lower_school_subject_grade_7' || input_id == 'lower_school_subject_grade_8' || input_id == 'lower_school_subject_grade_9' || input_id == 'lower_school_subject_grade_10' || input_id == 'lower_school_subject_grade_11') {
+            $(symbols).prepend("(");
+            $(symbols).append(")");
+          }
+          emptyIdContent("()", 'print_upper_school_subject_grade_1', "#print_upper_school_subject_grade_1");
+          emptyIdContent("()", 'print_upper_school_subject_grade_2', "#print_upper_school_subject_grade_2");
+          emptyIdContent("()", 'print_upper_school_subject_grade_3', "#print_upper_school_subject_grade_3");
+          emptyIdContent("()", 'print_upper_school_subject_grade_4', "#print_upper_school_subject_grade_4");
+          emptyIdContent("()", 'print_upper_school_subject_grade_5', "#print_upper_school_subject_grade_5");
+          emptyIdContent("()", 'print_lower_school_subject_grade_1', "#print_lower_school_subject_grade_1");
+          emptyIdContent("()", 'print_lower_school_subject_grade_2', "#print_lower_school_subject_grade_2");
+          emptyIdContent("()", 'print_lower_school_subject_grade_3', "#print_lower_school_subject_grade_3");
+          emptyIdContent("()", 'print_lower_school_subject_grade_4', "#print_lower_school_subject_grade_4");
+          emptyIdContent("()", 'print_lower_school_subject_grade_5', "#print_lower_school_subject_grade_5");
+          emptyIdContent("()", 'print_lower_school_subject_grade_6', "#print_lower_school_subject_grade_6");
+          emptyIdContent("()", 'print_lower_school_subject_grade_7', "#print_lower_school_subject_grade_7");
+          emptyIdContent("()", 'print_lower_school_subject_grade_8', "#print_lower_school_subject_grade_8");
+          emptyIdContent("()", 'print_lower_school_subject_grade_9', "#print_lower_school_subject_grade_9");
+          emptyIdContent("()", 'print_lower_school_subject_grade_10', "#print_lower_school_subject_grade_10");
+          emptyIdContent("()", 'print_lower_school_subject_grade_11', "#print_lower_school_subject_grade_11");
+
+          if (input_id == 'upper_school_subject_type_2' || input_id == 'upper_school_subject_type_3' || input_id == 'upper_school_subject_type_4' || input_id == 'upper_school_subject_type_5' ||
+              input_id == 'lower_school_subject_type_2' || input_id == 'lower_school_subject_type_3' || input_id == 'lower_school_subject_type_4' || input_id == 'lower_school_subject_type_5' ||
+              input_id == 'lower_school_subject_type_6' || input_id == 'lower_school_subject_type_7' || input_id == 'lower_school_subject_type_8' || input_id == 'lower_school_subject_type_9' ||
+              input_id == 'lower_school_subject_type_10' || input_id == 'lower_school_subject_type_11') {
+            $(symbols).prepend(" | ");
+          }
+          emptyIdContent(" | ", 'print_upper_school_subject_type_2', "#print_upper_school_subject_type_2");
+          emptyIdContent(" | ", 'print_upper_school_subject_type_3', "#print_upper_school_subject_type_3");
+          emptyIdContent(" | ", 'print_upper_school_subject_type_4', "#print_upper_school_subject_type_4");
+          emptyIdContent(" | ", 'print_upper_school_subject_type_5', "#print_upper_school_subject_type_5");
+          emptyIdContent(" | ", 'print_lower_school_subject_type_2', "#print_lower_school_subject_type_2");
+          emptyIdContent(" | ", 'print_lower_school_subject_type_3', "#print_lower_school_subject_type_3");
+          emptyIdContent(" | ", 'print_lower_school_subject_type_4', "#print_lower_school_subject_type_4");
+          emptyIdContent(" | ", 'print_lower_school_subject_type_5', "#print_lower_school_subject_type_5");
+          emptyIdContent(" | ", 'print_lower_school_subject_type_6', "#print_lower_school_subject_type_6");
+          emptyIdContent(" | ", 'print_lower_school_subject_type_7', "#print_lower_school_subject_type_7");
+          emptyIdContent(" | ", 'print_lower_school_subject_type_8', "#print_lower_school_subject_type_8");
+          emptyIdContent(" | ", 'print_lower_school_subject_type_9', "#print_lower_school_subject_type_9");
+          emptyIdContent(" | ", 'print_lower_school_subject_type_10', "#print_lower_school_subject_type_10");
+          emptyIdContent(" | ", 'print_lower_school_subject_type_11', "#print_lower_school_subject_type_11");
+        }
+      }
+
+      function dropDownListener(input_id, output_id, sentance_id) {
+        var dropDown = document.getElementById(input_id);
+        dropDown.onchange = function() {
+          document.getElementById(output_id).innerHTML = this.value;
+          drop_down_inner_html = document.getElementById(output_id).innerHTML;
+
+          if (input_id == 'sum_1' || input_id == 'sum_2' || input_id == 'sum_3') {
+            $("#summary_head").empty().append("Personal Profile <div class='section__heading-underline'></div>");
+          }
+          if ((document.getElementById('print_sum_1').innerHTML == "Click to select" || document.getElementById('print_sum_1').innerHTML == "") &&
+              (document.getElementById('print_sum_2').innerHTML == "Click to select" || document.getElementById('print_sum_2').innerHTML == "") &&
+              (document.getElementById('print_sum_3').innerHTML == "Click to select" || document.getElementById('print_sum_3').innerHTML == "")) {
+            $("#summary_head").empty();
+          }
+
+          if (input_id == 'sum_1') {
+            $('#sum_1_sentance').empty().append(" and focused with a passion to provide customers with a high-quality service within the hospitality sector.");
+          }
+          emptyIdContent("Click to select", 'print_sum_1', "#print_sum_1", sentance_id);
+
+          if (input_id == 'sum_2' && drop_down_inner_html != "I've never had a job in customer service" && drop_down_inner_html != "Click to select") {
+            $(sentance_id).empty().append(" Experienced in customer service via a previous role in ");
+          }
+          if (input_id == 'sum_2' && drop_down_inner_html == "I've never had a job in customer service") {
+            $(sentance_id).empty().append("Seeking a role where I can develop the necessary skills to pursue a career in serving customers whilst proving my ability to deliver excellent results");
+            $("#print_sum_2").empty().append("."); // this is not left completely empty because it would break the $("#summary_head").empty(); bit
+          }
+          emptyIdContent("Click to select", 'print_sum_2', "#print_sum_2", "#sum_2_sentance");
+
+          if (input_id == 'sum_3') {
+            $('#sum_3_sentance_1').empty().append(", where I developed my ");
+            $('#sum_3_sentance_2').empty().append(". This has equipped me with the relevant skills I need to be able to make customers feel at home and provide a good quality service. I am currently looking for a role where I can utilise these skills and continue to pursue a career in serving customers, where I can maintain my strong track record and deliver similar results.");
+          }
+          emptyIdContent("Click to select", 'print_sum_3', "#print_sum_3", "#sum_3_sentance_1", "#sum_3_sentance_2");
+
+          if (input_id == 'work_1a' || input_id == 'work_1c' || input_id == 'work_1e'||
+              input_id == 'work_2a' || input_id == 'work_2c' || input_id == 'work_2e' ||
+              input_id == 'work_3a' || input_id == 'work_3c' || input_id == 'work_3e' ||
+              input_id == 'work_4a' || input_id == 'work_4c' || input_id == 'work_4e') {
+            if (drop_down_inner_html == "Interpersonal skills") {
+              $(sentance_id).empty().append(" - Displayed excellent interpersonal skills when dealing with customers to provide the best possible service.");
+            }
+            if (drop_down_inner_html == "Verbal and written communication") {
+              $(sentance_id).empty().append(" - Demonstrated effective levels of verbal and written communication in all levels of engagement.");
+            }
+            if (drop_down_inner_html == "Persuasive") {
+              $(sentance_id).empty().append(" - Used persuasive skills effectively to drive sales whilst retaining a focus on excellent customer treatment.");
+            }
+            if (drop_down_inner_html == "Customer Service") {
+              $(sentance_id).empty().append(" - Communicated with customers regularly to ensure the delivery of excellent service and quality of treatment.");
+            }
+            if (drop_down_inner_html == "Deal with difficult customers") {
+              $(sentance_id).empty().append(" - Dealt with difficult customer complaints in a patient and friendly manner whilst working to ensure an appropriate and timely resolution.");
+            }
+            if (drop_down_inner_html == "Non-judgemental") {
+              $(sentance_id).empty().append(" - Dealt with customers from a variety of backgrounds and worked to ensure equal quality of treatment.");
+            }
+            if (drop_down_inner_html == "Polite and approachable") {
+              $(sentance_id).empty().append(" - Provided an approachable, polite, and professional attitude towards all patrons.");
+            }
+            if (drop_down_inner_html == "Friendly") {
+              $(sentance_id).empty().append(" - Ensured that all customers were met with a bubbly and friendly service.");
+            }
+            if (drop_down_inner_html == "Enthusiastic") {
+              $(sentance_id).empty().append(" - Approached work with an enthusiastic, can-do, and positive attitude, with a willingness to undertake a variety of tasks.");
+            }
+            if (drop_down_inner_html == "Confidence") {
+              $(sentance_id).empty().append(" - Provided excellent hospitality with a confident and well-poised approach.");
+            }
+            if (drop_down_inner_html == "Works well under pressure") {
+              $(sentance_id).empty().append(" - Worked well under pressure and responded positively to stressful situations whilst effectively managing deadlines and time sensitive tasks.");
+            }
+            if (drop_down_inner_html == "Teamwork") {
+              $(sentance_id).empty().append(" - Demonstrated excellent collaboration skills whilst working as part of a team, as well as being able to work independently when required.");
+            }
+            if (drop_down_inner_html == "Motivational") {
+              $(sentance_id).empty().append(" - Adopted an energetic approach to motivate and encourage colleagues, keeping morale high.");
+            }
+            if (drop_down_inner_html == "Independent") {
+              $(sentance_id).empty().append(" - Worked independently to manage deliverables whilst also being able to work well as part of a team.");
+            }
+            if (drop_down_inner_html == "Disciplined (organisation/time management)") {
+              $(sentance_id).empty().append(" - Maintained a high level of self-discipline, including excellent organisation and time management skills to ensure operations ran smoothly.");
+            }
+            if (drop_down_inner_html == "Disciplined (following instructions/rules)") {
+              $(sentance_id).empty().append(" - Displayed discipline and diligence whilst following instructions and ensured appropriate conduct in all situations.");
+            }
+            if (drop_down_inner_html == "Organisation") {
+              $(sentance_id).empty().append(" - Demonstrated high levels of organisational skills whilst working hard to ensure that customer expectations were met in a timely and punctual manner.");
+            }
+            if (drop_down_inner_html == "Language") {
+              $(sentance_id).empty().append(" - Communicated with customers from a range of diverse backgrounds, changing the engagement approach according to the situation whilst ensuring equal quality of treatment for all customers.");
+            }
+            if (drop_down_inner_html == "Flexible in work") {
+              $(sentance_id).empty().append(" - Worked with flexiblity and the willingness to undertake a variety of tasks as and when required.");
+            }
+            if (drop_down_inner_html == "Trustworthy") {
+              $(sentance_id).empty().append(" - Consistently delivered on responsibilities with trust, reliability, and regularity.");
+            }
+            if (drop_down_inner_html == "Attention to detail") {
+              $(sentance_id).empty().append(" - Worked in an attentive and alert manner, displaying high awareness to observe the environment with high attention to detail.");
+            }
+            if (drop_down_inner_html == "Problem solving") {
+              $(sentance_id).empty().append(" - Practised the ability to solve unique problems as they arise.");
+            }
+          }
+          emptyIdContent(drop_down_inner_html, 'print_work_1a', "#print_work_1a");
+          emptyIdContent(drop_down_inner_html, 'print_work_1c', "#print_work_1c");
+          emptyIdContent(drop_down_inner_html, 'print_work_1e', "#print_work_1e");
+          emptyIdContent(drop_down_inner_html, 'print_work_2a', "#print_work_2a");
+          emptyIdContent(drop_down_inner_html, 'print_work_2c', "#print_work_2c");
+          emptyIdContent(drop_down_inner_html, 'print_work_2e', "#print_work_2e");
+          emptyIdContent(drop_down_inner_html, 'print_work_3a', "#print_work_3a");
+          emptyIdContent(drop_down_inner_html, 'print_work_3c', "#print_work_3c");
+          emptyIdContent(drop_down_inner_html, 'print_work_3e', "#print_work_3e");
+          emptyIdContent(drop_down_inner_html, 'print_work_4a', "#print_work_4a");
+          emptyIdContent(drop_down_inner_html, 'print_work_4c', "#print_work_4c");
+          emptyIdContent(drop_down_inner_html, 'print_work_4e', "#print_work_4e");
+
+          if (input_id == 'fluency_1' || input_id == 'fluency_2' || input_id == 'fluency_3' || input_id == 'fluency_4') {
+            $(sentance_id).prepend(" (Fluency: ");
+            $(sentance_id).append(")");
+          }
+          emptyIdContent(" (Fluency: Click to select)", 'print_fluency_1', sentance_id);
+          emptyIdContent(" (Fluency: Click to select)", 'print_fluency_2', sentance_id);
+          emptyIdContent(" (Fluency: Click to select)", 'print_fluency_3', sentance_id);
+          emptyIdContent(" (Fluency: Click to select)", 'print_fluency_4', sentance_id);
+        }
+      }
+
+      // The parameters that contain a hashtag (#) serve the purpose of removing related added content when the user empties the input box or selects "Click to select" in the dropdown box.
+      dropDownListener('sum_1', 'print_sum_1', '#sum_1_sentance');
+      dropDownListener('sum_2', 'print_sum_2', '#sum_2_sentance');
+      dropDownListener('sum_3', 'print_sum_3', '#sum_3_sentance');
+
+      inputBoxListener('company_1', 'print_company_1');
+      inputBoxListener('job_1', 'print_job_1');
+      inputBoxListener('work_start_1', 'print_work_start_1');
+      inputBoxListener('work_end_1', 'print_work_end_1', '#print_work_end_1');
+      dropDownListener('work_1a', 'print_work_1a', '#print_work_1a');
+      dropDownListener('work_1c', 'print_work_1c', '#print_work_1c');
+      dropDownListener('work_1e', 'print_work_1e', '#print_work_1e');
+
+      inputBoxListener('company_2', 'print_company_2');
+      inputBoxListener('job_2', 'print_job_2');
+      inputBoxListener('work_start_2', 'print_work_start_2');
+      inputBoxListener('work_end_2', 'print_work_end_2', '#print_work_end_2');
+      dropDownListener('work_2a', 'print_work_2a', '#print_work_2a');
+      dropDownListener('work_2c', 'print_work_2c', '#print_work_2c');
+      dropDownListener('work_2e', 'print_work_2e', '#print_work_2e');
+
+      inputBoxListener('company_3', 'print_company_3');
+      inputBoxListener('job_3', 'print_job_3');
+      inputBoxListener('work_start_3', 'print_work_start_3');
+      inputBoxListener('work_end_3', 'print_work_end_3', '#print_work_end_3');
+      dropDownListener('work_3a', 'print_work_3a', '#print_work_3a');
+      dropDownListener('work_3c', 'print_work_3c', '#print_work_3c');
+      dropDownListener('work_3e', 'print_work_3e', '#print_work_3e');
+
+      inputBoxListener('company_4', 'print_company_4');
+      inputBoxListener('job_4', 'print_job_4');
+      inputBoxListener('work_start_4', 'print_work_start_4');
+      inputBoxListener('work_end_4', 'print_work_end_4', '#print_work_end_4');
+      dropDownListener('work_4a', 'print_work_4a', '#print_work_4a');
+      dropDownListener('work_4c', 'print_work_4c', '#print_work_4c');
+      dropDownListener('work_4e', 'print_work_4e', '#print_work_4e');
+
+      inputBoxListener('college_name', 'print_college_name');
+      inputBoxListener('college_course_type', 'print_college_course_type');
+      inputBoxListener('college_course_name', 'print_college_course_name');
+      inputBoxListener('college_grade', 'print_college_grade', '#print_college_grade');
+      inputBoxListener('college_start', 'print_college_start');
+      inputBoxListener('college_end', 'print_college_end', '#print_college_end');
+      inputBoxListener('college_modules', 'print_college_modules', '#print_college_modules');
+      inputBoxListener('college_notable', 'print_college_notable', '#print_college_notable');
+      inputBoxListener('college_societies', 'print_college_societies', '#print_college_societies');
+
+      inputBoxListener('upper_school_name', 'print_upper_school_name');
+      inputBoxListener('upper_school_start', 'print_upper_school_start');
+      inputBoxListener('upper_school_end', 'print_upper_school_end', '#print_upper_school_end');
+
+      inputBoxListener('upper_school_subject_type_1', 'print_upper_school_subject_type_1', '#print_upper_school_subject_type_1');
+      inputBoxListener('upper_school_subject_name_1', 'print_upper_school_subject_name_1');
+      inputBoxListener('upper_school_subject_grade_1', 'print_upper_school_subject_grade_1', '#print_upper_school_subject_grade_1');
+
+      inputBoxListener('upper_school_subject_type_2', 'print_upper_school_subject_type_2', '#print_upper_school_subject_type_2');
+      inputBoxListener('upper_school_subject_name_2', 'print_upper_school_subject_name_2');
+      inputBoxListener('upper_school_subject_grade_2', 'print_upper_school_subject_grade_2', '#print_upper_school_subject_grade_2');
+
+      inputBoxListener('upper_school_subject_type_3', 'print_upper_school_subject_type_3', '#print_upper_school_subject_type_3');
+      inputBoxListener('upper_school_subject_name_3', 'print_upper_school_subject_name_3');
+      inputBoxListener('upper_school_subject_grade_3', 'print_upper_school_subject_grade_3', '#print_upper_school_subject_grade_3');
+
+      inputBoxListener('upper_school_subject_type_4', 'print_upper_school_subject_type_4', '#print_upper_school_subject_type_4');
+      inputBoxListener('upper_school_subject_name_4', 'print_upper_school_subject_name_4');
+      inputBoxListener('upper_school_subject_grade_4', 'print_upper_school_subject_grade_4', '#print_upper_school_subject_grade_4');
+
+      inputBoxListener('upper_school_subject_type_5', 'print_upper_school_subject_type_5', '#print_upper_school_subject_type_5');
+      inputBoxListener('upper_school_subject_name_5', 'print_upper_school_subject_name_5');
+      inputBoxListener('upper_school_subject_grade_5', 'print_upper_school_subject_grade_5', '#print_upper_school_subject_grade_5');
+
+      inputBoxListener('upper_school_clubs', 'print_upper_school_clubs', '#print_upper_school_clubs');
+
+      inputBoxListener('lower_school_name', 'print_lower_school_name');
+      inputBoxListener('lower_school_start', 'print_lower_school_start');
+      inputBoxListener('lower_school_end', 'print_lower_school_end', '#print_lower_school_end');
+
+      inputBoxListener('lower_school_subject_type_1', 'print_lower_school_subject_type_1', '#print_lower_school_subject_type_1');
+      inputBoxListener('lower_school_subject_name_1', 'print_lower_school_subject_name_1');
+      inputBoxListener('lower_school_subject_grade_1', 'print_lower_school_subject_grade_1', '#print_lower_school_subject_grade_1');
+
+      inputBoxListener('lower_school_subject_type_2', 'print_lower_school_subject_type_2', '#print_lower_school_subject_type_2');
+      inputBoxListener('lower_school_subject_name_2', 'print_lower_school_subject_name_2');
+      inputBoxListener('lower_school_subject_grade_2', 'print_lower_school_subject_grade_2', '#print_lower_school_subject_grade_2');
+
+      inputBoxListener('lower_school_subject_type_3', 'print_lower_school_subject_type_3', '#print_lower_school_subject_type_3');
+      inputBoxListener('lower_school_subject_name_3', 'print_lower_school_subject_name_3');
+      inputBoxListener('lower_school_subject_grade_3', 'print_lower_school_subject_grade_3', '#print_lower_school_subject_grade_3');
+
+      inputBoxListener('lower_school_subject_type_4', 'print_lower_school_subject_type_4', '#print_lower_school_subject_type_4');
+      inputBoxListener('lower_school_subject_name_4', 'print_lower_school_subject_name_4');
+      inputBoxListener('lower_school_subject_grade_4', 'print_lower_school_subject_grade_4', '#print_lower_school_subject_grade_4');
+
+      inputBoxListener('lower_school_subject_type_5', 'print_lower_school_subject_type_5', '#print_lower_school_subject_type_5');
+      inputBoxListener('lower_school_subject_name_5', 'print_lower_school_subject_name_5');
+      inputBoxListener('lower_school_subject_grade_5', 'print_lower_school_subject_grade_5', '#print_lower_school_subject_grade_5');
+
+      inputBoxListener('lower_school_subject_type_6', 'print_lower_school_subject_type_6', '#print_lower_school_subject_type_6');
+      inputBoxListener('lower_school_subject_name_6', 'print_lower_school_subject_name_6');
+      inputBoxListener('lower_school_subject_grade_6', 'print_lower_school_subject_grade_6', '#print_lower_school_subject_grade_6');
+
+      inputBoxListener('lower_school_subject_type_7', 'print_lower_school_subject_type_7', '#print_lower_school_subject_type_7');
+      inputBoxListener('lower_school_subject_name_7', 'print_lower_school_subject_name_7');
+      inputBoxListener('lower_school_subject_grade_7', 'print_lower_school_subject_grade_7', '#print_lower_school_subject_grade_7');
+
+      inputBoxListener('lower_school_subject_type_8', 'print_lower_school_subject_type_8', '#print_lower_school_subject_type_8');
+      inputBoxListener('lower_school_subject_name_8', 'print_lower_school_subject_name_8');
+      inputBoxListener('lower_school_subject_grade_8', 'print_lower_school_subject_grade_8', '#print_lower_school_subject_grade_8');
+
+      inputBoxListener('lower_school_subject_type_9', 'print_lower_school_subject_type_9', '#print_lower_school_subject_type_9');
+      inputBoxListener('lower_school_subject_name_9', 'print_lower_school_subject_name_9');
+      inputBoxListener('lower_school_subject_grade_9', 'print_lower_school_subject_grade_9', '#print_lower_school_subject_grade_9');
+
+      inputBoxListener('lower_school_subject_type_10', 'print_lower_school_subject_type_10', '#print_lower_school_subject_type_10');
+      inputBoxListener('lower_school_subject_name_10', 'print_lower_school_subject_name_10');
+      inputBoxListener('lower_school_subject_grade_10', 'print_lower_school_subject_grade_10', '#print_lower_school_subject_grade_10');
+
+      inputBoxListener('lower_school_subject_type_11', 'print_lower_school_subject_type_11', '#print_lower_school_subject_type_11');
+      inputBoxListener('lower_school_subject_name_11', 'print_lower_school_subject_name_11');
+      inputBoxListener('lower_school_subject_grade_11', 'print_lower_school_subject_grade_11', '#print_lower_school_subject_grade_11');
+
+      inputBoxListener('lower_school_clubs', 'print_lower_school_clubs', '#print_lower_school_clubs');
+
+      inputBoxListener('cert_1', 'print_cert_1', '#print_cert_1');
+      inputBoxListener('cert_date_1', 'print_cert_date_1', '#print_cert_date_1');
+      inputBoxListener('cert_2', 'print_cert_2', '#print_cert_2');
+      inputBoxListener('cert_date_2', 'print_cert_date_2', '#print_cert_date_2');
+      inputBoxListener('cert_3', 'print_cert_3', '#print_cert_3');
+      inputBoxListener('cert_date_3', 'print_cert_date_3', '#print_cert_date_3');
+
+      inputBoxListener('activity_1', 'print_activity_1', '#print_activity_1');
+
+      inputBoxListener('tech_skills', 'print_tech_skills', '#print_tech_skills');
+
+      inputBoxListener('language_1', 'print_language_1', '#print_language_1');
+      dropDownListener('fluency_1', 'print_fluency_1', '#print_fluency_1');
+      inputBoxListener('language_2', 'print_language_2', '#print_language_2');
+      dropDownListener('fluency_2', 'print_fluency_2', '#print_fluency_2');
+      inputBoxListener('language_3', 'print_language_3', '#print_language_3');
+      dropDownListener('fluency_3', 'print_fluency_3', '#print_fluency_3');
+      inputBoxListener('language_4', 'print_language_4', '#print_language_4');
+      dropDownListener('fluency_4', 'print_fluency_4', '#print_fluency_4');
+    </script>
+
+    <section class="experience">
+      <div class='section__heading' id='summary_head'>
+        <!-- function inserts horizontal line here -->
+      </div>
+      <div class="">
+        <span id='print_sum_1'></span><span id="sum_1_sentance"></span>
+        <span id="sum_2_sentance"></span><span id='print_sum_2'></span><span id="sum_3_sentance_1"></span><span id='print_sum_3'></span><span id="sum_3_sentance_2"></span>
+      </div>
+    </section>
+
+    <section class="experience">
+      <div class="section__heading" id='work_head'>
+        <!-- function inserts horizontal line here -->
+      </div>
+      <div class="section__item">
+        <div>
+          <h4 class="education__institution section__subheading"><span id='print_company_1'></span></h4>
+          <h4 class="section__date-range">
+            <span id='print_work_start_1'></span> <span id='print_work_end_1'></span>
+          </h4>
+        </div>
+        <div>
+          <h5 class="section__subsubheading"><span id='print_job_1'></span></h5>
+          <h5 class="section__date-range"></h5>
+        </div>
+        <ul>
+          <div id='print_work_1a'></div>
+          <div id='print_work_1c'></div>
+          <div id='print_work_1e'></div>
+        </ul>
+      </div>
+
+      <div class="section__item">
+        <div>
+          <h4 class="education__institution section__subheading"><span id='print_company_2'></span></h4>
+          <h4 class="section__date-range">
+            <span id='print_work_start_2'></span> <span id='print_work_end_2'></span>
+          </h4>
+        </div>
+        <div>
+          <h5 class="section__subsubheading"><span id='print_job_2'></h5>
+          <h5 class="section__date-range"></h5>
+        </div>
+        <ul>
+          <div id='print_work_2a'></div>
+          <div id='print_work_2c'></div>
+          <div id='print_work_2e'></div>
+        </ul>
+      </div>
+
+      <div class="section__item">
+        <div>
+          <h4 class="education__institution section__subheading"><span id='print_company_3'></span></h4>
+          <h4 class="section__date-range">
+            <span id='print_work_start_3'></span> <span id='print_work_end_3'></span>
+          </h4>
+        </div>
+        <div>
+          <h5 class="section__subsubheading"><span id='print_job_3'></span></h5>
+          <h5 class="section__date-range"></h5>
+        </div>
+        <ul>
+          <div id='print_work_3a'></div>
+          <div id='print_work_3c'></div>
+          <div id='print_work_3e'></div>
+        </ul>
+      </div>
+
+      <div class="section__item">
+        <div>
+          <h4 class="education__institution section__subheading"><span id='print_company_4'></span></h4>
+          <h4 class="section__date-range">
+            <span id='print_work_start_4'></span> <span id='print_work_end_4'></span>
+          </h4>
+        </div>
+        <div>
+          <h5 class="section__subsubheading"><span id='print_job_4'></span></h5>
+          <h5 class="section__date-range"></h5>
+        </div>
+        <ul>
+          <div id='print_work_4a'></div>
+          <div id='print_work_4c'></div>
+          <div id='print_work_4e'></div>
+        </ul>
+      </div>
+    </section>
+
+    <section class="experience">
+      <div class='section__heading' id='education_head'>
+        <!-- function inserts horizontal line here -->
+      </div>
+      <div class="section__item">
+        <div>
+          <h4 class="education__institution section__subheading"><span id='print_college_name'></span></h4>
+          <h4 class="section__date-range">
+            <span id='print_college_start'></span>
+            <span id='print_college_end'></span>
+          </h4>
+        </div>
+        <div>
+          <h5 class="section__subsubheading">
+            <span id='print_college_course_type'></span>
+            <span id='print_college_course_name'></span><span id='print_college_grade'></span>
+          </h5>
+          <h5 class="section__date-range"></h5>
+        </div>
+        <ul>
+          <div id='print_college_modules'></div>
+          <div id='print_college_notable'></div>
+          <div id='print_college_societies'></div>
+        </ul>
+      </div>
+
+      <div class="section__item">
+        <div>
+          <h4 class="education__institution section__subheading"><span id='print_upper_school_name'></span></h4>
+          <h4 class="section__date-range">
+            <span id='print_upper_school_start'></span>
+            <span id='print_upper_school_end'></span>
+          </h4>
+        </div>
+        <div>
+          <h5 class="section__subsubheading">
+          </h5>
+          <h5 class="section__date-range"></h5>
+        </div>
+        <ul>
+          <span id='print_upper_school_subject_type_1'></span>
+          <span id='print_upper_school_subject_name_1'></span>
+          <span id='print_upper_school_subject_grade_1'></span>
+
+          <span id='print_upper_school_subject_type_2'></span>
+          <span id='print_upper_school_subject_name_2'></span>
+          <span id='print_upper_school_subject_grade_2'></span>
+
+          <span id='print_upper_school_subject_type_3'></span>
+          <span id='print_upper_school_subject_name_3'></span>
+          <span id='print_upper_school_subject_grade_3'></span>
+
+          <span id='print_upper_school_subject_type_4'></span>
+          <span id='print_upper_school_subject_name_4'></span>
+          <span id='print_upper_school_subject_grade_4'></span>
+
+          <span id='print_upper_school_subject_type_5'></span>
+          <span id='print_upper_school_subject_name_5'></span>
+          <span id='print_upper_school_subject_grade_5'></span>
+
+          <div id='print_upper_school_clubs'></div>
+        </ul>
+      </div>
+
+      <div class="section__item">
+        <div>
+          <h4 class="education__institution section__subheading"><span id='print_lower_school_name'></span></h4>
+          <h4 class="section__date-range">
+            <span id='print_lower_school_start'></span>
+            <span id='print_lower_school_end'></span>
+          </h4>
+        </div>
+        <div>
+          <h5 class="section__subsubheading">
+          </h5>
+          <h5 class="section__date-range"></h5>
+        </div>
+        <ul>
+          <span id='print_lower_school_subject_type_1'></span>
+          <span id='print_lower_school_subject_name_1'></span>
+          <span id='print_lower_school_subject_grade_1'></span>
+
+          <span id='print_lower_school_subject_type_2'></span>
+          <span id='print_lower_school_subject_name_2'></span>
+          <span id='print_lower_school_subject_grade_2'></span>
+
+          <span id='print_lower_school_subject_type_3'></span>
+          <span id='print_lower_school_subject_name_3'></span>
+          <span id='print_lower_school_subject_grade_3'></span>
+
+          <span id='print_lower_school_subject_type_4'></span>
+          <span id='print_lower_school_subject_name_4'></span>
+          <span id='print_lower_school_subject_grade_4'></span>
+
+          <span id='print_lower_school_subject_type_5'></span>
+          <span id='print_lower_school_subject_name_5'></span>
+          <span id='print_lower_school_subject_grade_5'></span>
+
+          <span id='print_lower_school_subject_type_6'></span>
+          <span id='print_lower_school_subject_name_6'></span>
+          <span id='print_lower_school_subject_grade_6'></span>
+
+          <span id='print_lower_school_subject_type_7'></span>
+          <span id='print_lower_school_subject_name_7'></span>
+          <span id='print_lower_school_subject_grade_7'></span>
+
+          <span id='print_lower_school_subject_type_8'></span>
+          <span id='print_lower_school_subject_name_8'></span>
+          <span id='print_lower_school_subject_grade_8'></span>
+
+          <span id='print_lower_school_subject_type_9'></span>
+          <span id='print_lower_school_subject_name_9'></span>
+          <span id='print_lower_school_subject_grade_9'></span>
+
+          <span id='print_lower_school_subject_type_10'></span>
+          <span id='print_lower_school_subject_name_10'></span>
+          <span id='print_lower_school_subject_grade_10'></span>
+
+          <span id='print_lower_school_subject_type_11'></span>
+          <span id='print_lower_school_subject_name_11'></span>
+          <span id='print_lower_school_subject_grade_11'></span>
+
+          <div id='print_lower_school_clubs'></div>
+        </ul>
+      </div>
+    </section>
+
+    <section class="experience">
+      <div class='section__heading' id='extracurricular_head'>
+        <!-- function inserts horizontal line here -->
+      </div>
+      <div class="section__item">
+        <div>
+          <h4 class="education__institution section__subheading"><span id='cert_head'></span></h4>
+          <h4 class="section__date-range"></h4>
+        </div>
+        <ul>
+          <div>
+            <span id='print_cert_1'></span>
+            <span id='print_cert_date_1'></span>
+          </div>
+          <div>
+            <span id='print_cert_2'></span>
+            <span id='print_cert_date_2'></span>
+          </div>
+          <div>
+            <span id='print_cert_3'></span>
+            <span id='print_cert_date_3'></span>
+          </div>
+        </ul>
+      </div>
+
+      <div class="section__item">
+        <div>
+          <h4 class="education__institution section__subheading"><span id='activity_head'></span></h4>
+          <h4 class="section__date-range"></h4>
+        </div>
+        <ul>
+          <div id='print_activity_1'></div>
+        </ul>
+      </div>
+
+      <div class="section__item">
+        <div>
+          <h4 class="education__institution section__subheading"><span id='tech_skills_head'></span></h4>
+          <h4 class="section__date-range"></h4>
+        </div>
+        <ul>
+          <div id='print_tech_skills'></div>
+        </ul>
+      </div>
+
+      <div class="section__item">
+        <div>
+          <h4 class="education__institution section__subheading"><span id='language_head'></span></h4>
+          <h4 class="section__date-range"></h4>
+        </div>
+        <ul>
+          <div>
+            <span id='print_language_1'></span>
+            <span id='print_fluency_1'></span>
+          </div>
+          <div>
+            <span id='print_language_2'></span>
+            <span id='print_fluency_2'></span>
+          </div>
+          <div>
+            <span id='print_language_3'></span>
+            <span id='print_fluency_3'></span>
+          </div>
+          <div>
+            <span id='print_language_4'></span>
+            <span id='print_fluency_4'></span>
+          </div>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>
