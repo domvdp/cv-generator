@@ -871,7 +871,7 @@ def customer_service_resume(request):
 
     html = template.render(context)
     css = [
-        'pdf/static/cv_template.css',
+        '/home/domvdp/cv-generator/pdf/static/cv_template.css', # 'pdf/static/cv_template.css',
     ]
 
     # Save Resume as PDF within project
@@ -1088,7 +1088,7 @@ def construction_resume(request):
 
     html = template.render(context)
     css = [
-        'pdf/static/cv_template.css',
+        '/home/domvdp/cv-generator/pdf/static/cv_template.css', # 'pdf/static/cv_template.css',
     ]
 
     # Save Resume as PDF within project
@@ -1293,7 +1293,7 @@ def security_resume(request):
 
     html = template.render(context)
     css = [
-        'pdf/static/cv_template.css',
+        '/home/domvdp/cv-generator/pdf/static/cv_template.css', # 'pdf/static/cv_template.css',
     ]
 
     # Save Resume as PDF within project
